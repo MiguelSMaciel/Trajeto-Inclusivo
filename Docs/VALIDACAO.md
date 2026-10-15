@@ -1,0 +1,81 @@
+# Validação local — 15/10/2026
+
+Ambiente: Windows, Unity 6000.6.4f1, URP 17.6.0. Projeto em `E:/Jogos/Unity/Trajeto Inclusivo`.
+
+## Port Linux
+
+Build nativo Linux x86_64/Mono concluído em 15/10/2026 com o módulo Linux Build Support instalado oficialmente pelo Unity Hub. `linux-build.log` registrou `TRAJETO_LINUX_BUILD_OK` e encerramento com código 0. O pacote tar.gz preserva permissões 0755 do player e dos scripts; o cabeçalho ELF confirma arquitetura x86_64. A execução nativa será registrada aqui após a validação do pacote no Ubuntu pelo workflow `linux-smoke.yml`.
+
+As evidências anteriores do Windows (59 EditMode + 10 PlayMode e matriz de 60 casos do player) estão preservadas em [Resultados/Windows](Resultados/Windows). Não representam execução Linux.
+
+## Verificações concluídas
+
+**Navegação no mapa ampliado:** `TestResults/navigation-editmode.xml` registra **59 testes aprovados**, e `navigation-playmode.xml` registra **10 testes integrados aprovados**, zero falhas: **69 testes** no total. Os novos casos conferem separação e contenção dos rótulos, inclusive quando os pontos projetados coincidem ou ficam além da tela; aproximação dos três marcos preservando endpoints, a mesma rota calculada e o estado não avaliado; cancelamento de seleção pendente; enquadramento após trocar o trajeto; e proteção contra seleção da geometria por trás dos rótulos e do rodapé. Os resultados anteriores abaixo são mantidos como histórico.
+
+O build foi concluído em `navigation-build.log`. O executável verificou novamente **60/60 combinações**, aproximação da FAESA preservando A/B e zero erros de execução (`TestResults/Navigation/Stage4-Player.txt`, `Stage4-Player-Matrix.csv`, `navigation-player.log`). As capturas `Navigation/Navigation-FAESA-Closeup.png` e `Navigation/Stage4-Comparacao-AvenidaVitoria_FAESA.png` foram conferidas visualmente, incluindo rótulos, barra de aproximação e ocultação dos textos geográficos grandes na vista próxima. A rotina automatizada usa as ações da interface; não houve ensaio manual de usabilidade. **© OpenStreetMap contributors — ODbL 1.0.**
+
+**Expansão FAESA:** `TestResults/faesa-editmode.xml` registra **54 testes aprovados** e `faesa-playmode.xml` registra **9 testes integrados aprovados**, zero falhas: **63 testes** no total. A nova cena foi gerada com 750 eixos/caminhos, 1.212 edifícios, 1.608 nós, 2.522 trechos e zero polígonos rejeitados (`FaesaSetup.txt`). O percurso inicial Praça–FAESA mede cerca de 654,39 m no modelo, sem declarar itinerário real verificado.
+
+`FAESA-Matrix.csv` guarda 30 combinações da cena ampliada: Praça/Ifes como origem × 5 cenários × 3 perfis. Todas encontram caminho convencional e acessível quando as hipóteses são explicitamente ativadas; os arcos acessíveis são conferidos como passáveis. Os testes verificam estado inicial não avaliado, IDs únicos, ausência de acesso artificial com comprimento zero na referência projetada, conexão à Avenida Vitória, botões de referência, enquadramento e retorno ao estado desconhecido. Também conferem checksum, endereço OSM 2220, fonte institucional e preservação da origem local. As suítes anteriores continuam aprovadas.
+
+**Build da expansão concluído** (`faesa-build.log`, `TRAJETO_BUILD_OK`). O executável confirmou **60/60 combinações**, zero erros de execução e seleção por raycast nas três cenas (`TestResults/FAESA/Stage4-Player-Matrix.csv`, `Stage4-Player.txt`, `faesa-player.log`, marcador `TRAJETO_STAGE4_OK`). São os 30 casos das cenas anteriores mais 30 casos da expansão. Capturas completas com IMGUI foram conferidas em `TestResults/FAESA/Stage4-Comparacao-AvenidaVitoria_FAESA.png` e `Stage4-NaoAvaliado-AvenidaVitoria_FAESA.png`, mostrando o recorte ampliado, 654,4 m no caminho convencional e 665,4 m no desvio do degrau. O estado inicial exibe apenas a rota convencional e mantém a acessível sem confirmação. **© OpenStreetMap contributors — ODbL 1.0.** A validação é computacional; não houve inspeção de campo ou ensaio manual de usabilidade.
+
+**Etapa 4:** `TestResults/stage4-editmode.xml` registra **52 testes aprovados**, zero falhas, e `TestResults/stage4-playmode.xml` registra **8 testes integrados aprovados**, zero falhas. São **60 testes**, incluindo comparação direcional, justificativas, layout em cinco proporções de tela, seleção de endpoints por raycast, cancelamento, A=B, cache de perfis e foco por trecho.
+
+A matriz de 2 cenas × 5 cenários × 3 perfis passou integralmente. Os CSVs `Stage4-AvenidaVitoria_Testbed-Matrix.csv` e `Stage4-AvenidaVitoria_Geografico-Matrix.csv` guardam as 30 combinações. As cadeiras manual e motorizada evitam degrau, rampa e buraco dos presets; o pedestre consegue usar o caminho central nesses três casos. Obras provocam desvio das duas buscas para todos os perfis. Na rede geográfica, o cenário inclinado tem dois trechos impedidos para a cadeira manual e um para a motorizada, devido às tolerâncias diferentes de descida.
+
+**Build da Etapa 4 concluído** em `TestResults/stage4-build.log`. O executável confirmou **30/30 combinações aprovadas**, seleção de endpoints nas duas cenas e zero erros de execução (`TestResults/Stage4-Player-Matrix.csv`, `Stage4-Player.txt`, `stage4-player.log`, marcador `TRAJETO_STAGE4_OK`). A rotina descarta capturas pretas da janela oculta. A recriação do framebuffer permitiu capturar e conferir IMGUI: estado não avaliado, comparação com desvio, três perfis, inspeção e layout em 1024×768, nas imagens `Stage4-*.png`. A conferência identificou e corrigiu vestígios visuais entre abas e baixo contraste dos botões de problemas. Não houve automação de cliques de mouse/teclado na janela nativa; os fluxos foram exercitados pelas mesmas ações públicas e raycasts usados pela interface.
+
+`Docs/INTERFACE_E_VALIDACAO.md` relaciona os sete critérios do pedido às verificações e explica os fluxos do painel final. Os registros das etapas anteriores abaixo preservam seu histórico de validação.
+
+**Etapa 3:** `TestResults/stage3-editmode.xml` registra **42 testes aprovados**, zero falhas; `TestResults/stage3-playmode.xml` registra **5 testes integrados aprovados**, zero falhas. Os relatórios anteriores abaixo preservam a validação das etapas precedentes.
+
+Os novos testes conferem largura de passagem contínua entre obstáculos centrais, laterais sobrepostos e sucessivos; contorno de degrau parcial conforme perfil; altura vertical do degrau sobre plano inclinado; collider atingindo o fundo do buraco; sobreposição de profundidades; ondulação física; interpolação bilinear com origem vertical, limites da cobertura e rejeição de CSV inválido. Os testes em execução exercitam edição que provoca desvio de 148 m, desfazer/refazer, salvar/carregar, recusa de arquivo incompatível sem modificar o mundo, rampa de 12%, grade persistindo entre cenários e restauração de cotas-base. Aplicar elevação mantém a rede geográfica não avaliada quando esse era o estado anterior.
+
+**Build da Etapa 3 concluído** (`TestResults/stage3-build.log`, `TRAJETO_BUILD_OK`). **Validação no executável Windows aprovada** (`TestResults/stage3-player.log`, `TRAJETO_PLAYER_SMOKE_OK`). Além dos cinco cenários geográficos, o player conferiu fundo do buraco e largura contínua, desfazer/refazer, equivalência do JSON após salvar/carregar, rampa editada e aplicação de grade artificial. Os resultados estão em `TestResults/GeographicSmoke.txt`; a experiência usada está em `TestResults/Stage3-Player.experiment.json`.
+
+As capturas `Stage3-Obstaculos.png` e `Stage3-Relevo.png` foram renderizadas pelo player e conferidas visualmente: mostram o buraco na calçada inclinada, poste/árvore/banco esquemáticos e o contexto OSM com a grade de demonstração aplicada. Não incluem a interface IMGUI nem constituem observações reais. **© OpenStreetMap contributors — ODbL 1.0.** Não houve teste manual de cliques/teclado na janela visível; os testes e o player exerceram os comandos e o ciclo de renderização.
+
+- Geração e gravação da cena `AvenidaVitoria_Testbed`: concluída pelo Editor em batch (`TRAJETO_SETUP_OK`).
+- **EditMode: 29 testes aprovados, zero falhas.** Relatório NUnit em `TestResults/EditMode.xml`, atualizado após integrar o mapa OSM e o Dijkstra com heap.
+- **PlayMode: 2 testes integrados aprovados, zero falhas.** Relatório em `TestResults/PlayMode.xml`; cobre as duas cenas.
+- **Build Windows: concluído.** Executável em `Builds/Windows/TrajetoInclusivo.exe`.
+- **Player Windows do testbed original: cinco cenários aprovados na Etapa 1.** `TestResults/StandaloneSmoke.txt` registra 100,018 m na rota central suave, 100,287 m na rota central com 12% e 148,000 m nos desvios esperados.
+
+Na Etapa 2, a geração importou 496 eixos/caminhos/escadarias e 787 edifícios, sem rejeição de polígonos. A rede experimental tem 890 nós e 1.512 trechos. O relatório em `TestResults/GeographicSetup.txt` registra a conexão geométrica inicial, de aproximadamente 186,52 m, sem afirmar que seja um trajeto pedestre real verificado.
+
+O teste integrado geográfico confirma que a rede começa não avaliada, sem rota acessível confirmada; a ativação explícita de hipóteses permite os cenários de teste, e as barreiras provocam desvios. Também verifica que mudar o perfil reutiliza as malhas dos pavimentos. Os testes GIS conferem checksum do XML, nomes/tags preservados, falta de elevação, normais e área da triangulação côncava, não conexão de eixos apenas por cruzamento visual e separação por nível.
+
+**Player Windows geográfico: cinco cenários aprovados**, incluindo verificação do estado inicial não avaliado. `TestResults/GeographicSmoke.txt` registra 186,519 m no percurso base, 187,145 m na variante inclinada e 352,693 m no desvio acessível; em obras, ambas as buscas usam 352,693 m. Essas distâncias pertencem ao grafo experimental, com conexões e atributos simulados. `TestResults/geographic-player.log` registra a execução. O player foi renderizado via URP para conferir eixos, footprints e percursos nas imagens `Geographic-*.png`.
+
+A distribuição inclui `MapData/pedestrian_graph.json`, com 890 IDs de nós únicos, 1.512 arestas inicialmente não avaliadas e proveniência por trecho. Inclui também os parâmetros de simulação e os métodos necessários para reproduzir a derivação. A atribuição dessas prévias e da base é **© OpenStreetMap contributors — ODbL 1.0**, conforme `Docs/CREDITOS.md`.
+
+As prévias `TestResults/Testbed-Perspectiva.png` e `TestResults/Testbed-Superior.png` são renderizações geométricas offscreen do player, conferidas visualmente. Não incluem o painel IMGUI. A interação manual com a janela visível não foi exercitada por automação de desktop nesta sessão.
+
+O teste integrado carrega a cena real do projeto e exercita os cinco cenários com cadeira manual. Confere caminho direto no cenário livre, desvio de 148 m diante de degrau, rampa de 12% e buraco, desvio de ambas as buscas diante das obras, restauração da rota após remoção do degrau, capacidade diferente do pedestre e movimento do marcador. Confere também a geometria/collider da rampa elevada. `LogAssert.NoUnexpectedReceived` verifica logs inesperados durante essa execução.
+
+Os testes de EditMode também cobrem Dijkstra e métricas geométricas, limites individuais, pesos, trechos desconhecidos, topologia sem conexão, interdições, sentido único, perfis direcionais e importação de coordenadas. Não constituem uma validação geodésica contra pontos de controle externos ou validação de normas.
+
+## Reproduzir por linha de comando
+
+Exemplos PowerShell, executados a partir da pasta do projeto:
+
+```powershell
+$unityEditor = 'C:/Program Files/Unity/Hub/Editor/6000.6.4f1/Editor/Unity.exe'
+$testProject = (Get-Location).Path
+& $unityEditor -batchmode -nographics -projectPath $testProject -runTests -testPlatform EditMode -testResults "$testProject/TestResults/EditMode.xml" -logFile "$testProject/TestResults/editmode.log"
+& $unityEditor -batchmode -projectPath $testProject -runTests -testPlatform PlayMode -testResults "$testProject/TestResults/PlayMode.xml" -logFile "$testProject/TestResults/playmode.log"
+& $unityEditor -batchmode -projectPath $testProject -executeMethod TrajetoInclusivo.Editor.WindowsBuild.Build -quit -logFile "$testProject/TestResults/build.log"
+```
+
+Não execute instâncias concorrentes do Editor sobre este mesmo projeto. O processo de testes encerra o Editor ao terminar; evite `-quit` na chamada `-runTests`.
+
+O player tem uma entrada opcional de QA, ativada exclusivamente pelo argumento `-testbed-smoke`. Ela percorre os cenários, registra distâncias, salva capturas e encerra. No uso normal, esse componente não é criado.
+
+```powershell
+& './Builds/Windows/TrajetoInclusivo.exe' -testbed-smoke -testbed-results "$testProject/TestResults" -logFile "$testProject/TestResults/player.log"
+```
+
+## Alcance
+
+As verificações comprovam o comportamento dos exemplos sintéticos conhecidos. Não houve levantamento da Avenida Vitória, avaliação com usuários reais, ensaio de cadeira física ou comprovação de conformidade normativa. Cotas, gargalos de passagem e capacidades dos perfis continuam classificados como hipóteses artificiais.

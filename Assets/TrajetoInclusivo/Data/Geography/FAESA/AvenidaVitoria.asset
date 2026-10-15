@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112f3a7316425c7488a4f72c330670a6, type: 3}
+  m_Name: AvenidaVitoria
+  m_EditorClassIdentifier: TrajetoInclusivo::TrajetoInclusivo.GeographicMapDefinition
+  geoJson: {fileID: 4900000, guid: 55897aecd32884e48bba325dad359af2, type: 3}
+  provenance: {fileID: 4900000, guid: 33a87f2bc5e4d9a4299bfbd63b1ad2a6, type: 3}
+  reference:
+    coordinates: 0
+    originLongitude: -40.3194586
+    originLatitude: -20.3113408
+    originEasting: 0
+    originNorthing: 0
+    originAltitude: 0
+  datasetDate: 2026-10-15
+  attribution: "\xA9 OpenStreetMap contributors \xB7 ODbL 1.0"
+  simulatedSidewalkWidth: 2.4
+  assumedLaneWidth: 3.2
+  assumedLocalRoadWidth: 6
+  simulatedSidewalkElevation: 0.18
+  assumedBuildingHeight: 6
+  plazaId: way/541652953
+  campusId: way/1352259307
+  campusGateId: node/12511661225
+  faesaReferenceId: way/51374617

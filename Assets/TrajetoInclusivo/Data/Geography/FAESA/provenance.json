@@ -1,0 +1,48 @@
+{
+  "title": "Avenida Vitória — Praça / Ifes / FAESA — OpenStreetMap",
+  "downloadedAtUtc": "2026-10-15T16:00:51Z",
+  "sourceUrl": "https://api.openstreetmap.org/api/0.6/map?bbox=-40.323,-20.314,-40.308,-20.307",
+  "sourceSha256": "6a2c6cd1113748e113e886afdedd1b29d45bb6cbc76e32a5cc48165a78b53bbe",
+  "sourceFile": "avenida_vitoria_faesa.osm",
+  "license": "ODbL 1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "licenseUrl": "https://www.openstreetmap.org/copyright",
+  "crs": "EPSG:4326 (lon, lat); no vertical data",
+  "crop": [
+    -40.3221,
+    -20.3125,
+    -40.313,
+    -20.3083
+  ],
+  "origin": {
+    "osmNodeId": "12511666338",
+    "longitude": -40.3194586,
+    "latitude": -20.3113408,
+    "altitude": null
+  },
+  "landmarks": [
+    {
+      "osmId": "way/541652953",
+      "name": "Praça Asdrúbal Soares"
+    },
+    {
+      "osmId": "way/1352259307",
+      "name": "IFES - Campus VItória"
+    },
+    {
+      "osmId": "way/51374617",
+      "name": "Edifício OSM no endereço da FAESA, Av. Vitória 2220",
+      "identitySource": "https://www.faesa.br/contato/",
+      "derivation": "Address match. Destination is a projection onto the approximate Avenida Vitória sidewalk; no verified campus entrance."
+    }
+  ],
+  "counts": {
+    "road": 750,
+    "building": 1212,
+    "park": 1,
+    "campus": 1,
+    "poi": 30,
+    "skippedIncomplete": 0
+  },
+  "processing": "Ways only. Roads clipped edge by edge; polygons retained whole when a vertex falls inside crop. Multipolygon relations not reconstructed. Original tags and versions retained. No widths, elevations or accessibility assessments inferred as verified."
+}

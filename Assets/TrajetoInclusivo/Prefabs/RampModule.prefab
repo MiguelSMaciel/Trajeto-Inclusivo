@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3572739745934725551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4574167600025455973}
+  - component: {fileID: 7548758049996796269}
+  m_Layer: 0
+  m_Name: "In\xEDcio"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4574167600025455973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572739745934725551}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 258340738854357035}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7548758049996796269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572739745934725551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59cfcbdf7b18f9246987590cde88845a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TrajetoInclusivo::TrajetoInclusivo.PedestrianNode
+  id: ramp-start
+  displayName: 
+  elevationVerification: 0
+  elevationSource: "Cota artificial do cen\xE1rio"
+--- !u!1 &4095112471523858074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 258340738854357035}
+  - component: {fileID: 2035582488816932134}
+  - component: {fileID: 4121974258915232482}
+  m_Layer: 0
+  m_Name: RampModule
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &258340738854357035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4095112471523858074}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4574167600025455973}
+  - {fileID: 831132525866825765}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2035582488816932134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4095112471523858074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b14ed348aa53fa4b975dd7b9adf8b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TrajetoInclusivo::TrajetoInclusivo.AccessibilitySegment
+  id: ramp
+  displayName: 
+  start: {fileID: 7548758049996796269}
+  end: {fileID: 3365866148071665380}
+  totalWidth: 2.4
+  freeWidth: 2.4
+  crossSlopePercent: 1
+  roughness: 0.05
+  stepHeight: 0
+  surfaceAmplitude: 0
+  surfacePeriod: 2
+  pavement: "Concreto sint\xE9tico"
+  hasAssessmentData: 1
+  networkOpen: 1
+  bidirectional: 1
+  verification: 0
+  sourceFeatureId: 
+  geometryProvenance: 
+  syntheticConnection: 0
+  elevationIsSimulated: 1
+  obstacles: []
+--- !u!114 &4121974258915232482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4095112471523858074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31726a7ffd0e8f34a97e94d034cdd59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TrajetoInclusivo::TrajetoInclusivo.AccessibilityRamp
+  segment: {fileID: 2035582488816932134}
+  startElevation: 0.18
+  endElevation: 0.5
+  width: 2.4
+  crossSlopePercent: 1
+--- !u!1 &8886751432262126141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831132525866825765}
+  - component: {fileID: 3365866148071665380}
+  m_Layer: 0
+  m_Name: Fim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &831132525866825765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886751432262126141}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 258340738854357035}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3365866148071665380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886751432262126141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59cfcbdf7b18f9246987590cde88845a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TrajetoInclusivo::TrajetoInclusivo.PedestrianNode
+  id: ramp-end
+  displayName: 
+  elevationVerification: 0
+  elevationSource: "Cota artificial do cen\xE1rio"

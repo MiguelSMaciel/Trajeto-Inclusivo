@@ -1,0 +1,42 @@
+{
+  "title": "Avenida Vitória / Jucutuquara — OpenStreetMap",
+  "downloadedAtUtc": "2026-10-15T14:33:00Z",
+  "sourceUrl": "https://api.openstreetmap.org/api/0.6/map?bbox=-40.324,-20.314,-40.314,-20.305",
+  "sourceSha256": "2eca9ca845b9ad13529df74d107da1fe733b46402a4fb98e5d534653c2c6f476",
+  "sourceFile": "jucutuquara.osm",
+  "license": "ODbL 1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "licenseUrl": "https://www.openstreetmap.org/copyright",
+  "crs": "EPSG:4326 (lon, lat); no vertical data",
+  "crop": [
+    -40.3221,
+    -20.3125,
+    -40.3166,
+    -20.3083
+  ],
+  "origin": {
+    "osmNodeId": "12511666338",
+    "longitude": -40.3194586,
+    "latitude": -20.3113408,
+    "altitude": null
+  },
+  "landmarks": [
+    {
+      "osmId": "way/541652953",
+      "name": "Praça Asdrúbal Soares"
+    },
+    {
+      "osmId": "way/1352259307",
+      "name": "IFES - Campus VItória"
+    }
+  ],
+  "counts": {
+    "road": 496,
+    "building": 787,
+    "park": 1,
+    "campus": 1,
+    "poi": 18,
+    "skippedIncomplete": 0
+  },
+  "processing": "Ways only. Roads clipped edge by edge; polygons retained whole when a vertex falls inside crop. Multipolygon relations not reconstructed. Original tags and versions retained. No widths, elevations or accessibility assessments inferred as verified."
+}

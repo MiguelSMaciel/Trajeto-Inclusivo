@@ -1,0 +1,5 @@
+{
+  "name": "TrajetoInclusivo.Editor",
+  "references": ["TrajetoInclusivo"],
+  "includePlatforms": ["Editor"]
+}

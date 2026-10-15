@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6cbdb5d20624e4792f2d7dffd02983, type: 3}
+  m_Name: GeoScenario1
+  m_EditorClassIdentifier: TrajetoInclusivo::TrajetoInclusivo.ScenarioDefinition
+  displayName: "1 \xB7 Sem obst\xE1culos"
+  description: "Condi\xE7\xE3o ARTIFICIAL sobre Avenida Vit\xF3ria. N\xE3o representa condi\xE7\xF5es observadas no local."
+  raisedNodeId: GeoRamp
+  elevationOffset: 0
+  obstacles: []

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c9396365be48c41a0e777251f16483, type: 3}
+  m_Name: ExampleElevation
+  m_EditorClassIdentifier: TrajetoInclusivo::TrajetoInclusivo.ElevationDataset
+  sourceDescription: "Grade artificial de demonstra\xE7\xE3o \u2014 N\xC3O \xE9 relevo de Vit\xF3ria"
+  sourceDate: 2026-10-15
+  verticalDatum: Plano local artificial
+  verification: 0
+  columns: 3
+  rows: 3
+  originX: -500
+  originZ: -500
+  spacingX: 500
+  spacingZ: 500
+  verticalOrigin: 0
+  heights:
+  - 0.18
+  - 1.18
+  - 2.18
+  - 1.18
+  - 2.18
+  - 3.18
+  - 2.18
+  - 3.18
+  - 4.18

@@ -1,0 +1,12 @@
+© OpenStreetMap contributors
+OpenStreetMap data and this cropped/converted geographic database are available under the Open Database License (ODbL) 1.0.
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+
+Snapshot downloaded 2026-10-15. Original OSM XML, converted GeoJSON, metadata, license and conversion/network-generation methods are supplied with this distribution in MapData (Windows build) or Assets/TrajetoInclusivo/Data/Geography and Tools (Unity source project).
+
+Alterations: rectangular extraction, road-edge clipping, conversion to GeoJSON, local UTM projection and generation of approximate offset sidewalks and hypothetical junction/access connections. Mapped footprint geometry retained where triangulation succeeds. Sidewalk widths, road widths inferred from lanes, building heights inferred from floors/defaults, elevations and accessibility conditions are simulation assumptions unless an original OSM tag is explicitly retained as an unverified source attribute.
+
+The derived geographic database is provided under ODbL 1.0. This notice does not license the Unity engine or third-party software. See provenance.json for source, SHA-256 checksum, geographic origin, crop and processing details.
+
+This is not a surveyed map, verified pedestrian itinerary or accessibility certification. The original synthetic testbed is separate and does not depict the actual location.

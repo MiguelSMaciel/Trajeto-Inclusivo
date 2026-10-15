@@ -1,0 +1,51 @@
+name: Validar executável Linux
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Versão publicada que será validada
+        required: true
+        default: v0.1.0-linux
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  linux-player:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - name: Instalar display virtual e bibliotecas gráficas
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libgl1-mesa-dri libglx-mesa0 libxcursor1 libxrandr2 libxinerama1 libxi6 libasound2 libgtk-3-0
+      - name: Baixar e verificar pacote publicado
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+        run: |
+          mkdir package
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern 'TrajetoInclusivo-Linux-x86_64.tar.gz' --pattern 'SHA256SUMS.txt' --dir package
+          cd package
+          sha256sum -c SHA256SUMS.txt
+          tar -xzf TrajetoInclusivo-Linux-x86_64.tar.gz
+          bash -n TrajetoInclusivo-Linux-x86_64/TrajetoInclusivo.sh
+          bash -n TrajetoInclusivo-Linux-x86_64/Testar-Linux.sh
+      - name: Executar as três cenas em Linux
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          mkdir -p linux-results
+          uname -a > linux-results/environment.txt
+          cat /etc/os-release >> linux-results/environment.txt
+          xvfb-run -a -s '-screen 0 1600x1000x24' ./package/TrajetoInclusivo-Linux-x86_64/Testar-Linux.sh "$GITHUB_WORKSPACE/linux-results"
+      - name: Preservar relatórios e capturas
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: linux-native-results
+          path: linux-results/
+          if-no-files-found: warn
+          retention-days: 14

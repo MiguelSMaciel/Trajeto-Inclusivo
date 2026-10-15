@@ -1,0 +1,6 @@
+{
+  "name": "TrajetoInclusivo.Tests",
+  "references": ["TrajetoInclusivo", "TrajetoInclusivo.Editor"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "includePlatforms": ["Editor"]
+}
