@@ -2,6 +2,8 @@
 
 **Linux x86_64:** há um port nativo com as três cenas e toda a documentação. Consulte [LINUX.md](Docs/LINUX.md) para executar, compilar e validar. Os pacotes ficam na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases); o repositório contém os fontes, assets e documentação, sem os caches do Unity.
 
+**Validação Linux:** 60/60 casos aprovados em Ubuntu 22.04.5, usando Xvfb/Mesa. Relatórios, capturas e limites em [VALIDACAO.md](Docs/VALIDACAO.md). Instruções para desenvolvimento e publicação em [REPOSITORIO.md](Docs/REPOSITORIO.md).
+
 O projeto inclui as quatro etapas: testbed sintético, integração cartográfica, componentes físicos/editáveis e interface comparativa com validação automatizada. O mapa de Jucutuquara, Vitória–ES, usa eixos e polígonos do **OpenStreetMap extraídos em 15/10/2026**, preserva nomes e referências de origem, e funciona localmente.
 
 **Expansão até a FAESA:** a nova cena `AvenidaVitoria_FAESA` inclui o corredor Praça–Ifes–FAESA, com botões **Praça → FAESA** e **Ifes → FAESA**. O executável abre esse mapa ampliado. O destino é uma referência aproximada na calçada da Avenida Vitória junto ao endereço 2220; não representa uma entrada verificada do campus. Fonte, método e limites em `Docs/EXPANSAO_FAESA.md`.
@@ -75,7 +77,7 @@ Há prefabs de calçada, rampa, obstáculo e cadeira em `Assets/TrajetoInclusivo
 Abra **Window → General → Test Runner**. Execute as abas **EditMode** e **PlayMode**.
 
 - EditMode: roteamento, métricas direcionais e comparação, importação, checksum do snapshot, triangulação, separação por ID/nível, gargalos entre obstáculos, degrau parcial, fundos físicos de buracos, ondulação, interpolação/rejeição de grades CSV e separação dos painéis em diferentes resoluções.
-- PlayMode: carrega as duas cenas, verifica a matriz de cinco cenários com três perfis, seleção de pontos por raycast, A=B, cache de comparações, foco por trecho, desvios, rampas, dados não avaliados, reutilização de malhas, edição física, histórico, persistência e permanência da grade entre cenários.
+- PlayMode: carrega as três cenas, verifica a matriz de cinco cenários com três perfis, seleção de pontos por raycast, A=B, cache de comparações, foco por trecho, desvios, rampas, dados não avaliados, reutilização de malhas, edição física, histórico, persistência e permanência da grade entre cenários.
 
 Os relatórios da validação local ficam em `TestResults`. Consulte `Docs/VALIDACAO.md` para os resultados efetivamente executados.
 

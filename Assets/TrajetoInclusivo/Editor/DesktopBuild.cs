@@ -81,7 +81,7 @@ namespace TrajetoInclusivo.Editor
                 string destination=Path.Combine(documentation,Path.GetRelativePath("Docs",file));
                 Directory.CreateDirectory(Path.GetDirectoryName(destination));File.Copy(file,destination,true);
             }
-            File.Copy("NOTICE.md",folder+"/NOTICE.md",true);
+            File.WriteAllText(folder+"/NOTICE.md",File.ReadAllText("NOTICE.md").Replace("](Docs/","](Documentacao/"));
         }
     }
 }

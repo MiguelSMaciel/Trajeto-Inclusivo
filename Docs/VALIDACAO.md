@@ -4,7 +4,13 @@ Ambiente: Windows, Unity 6000.6.4f1, URP 17.6.0. Projeto em `E:/Jogos/Unity/Traj
 
 ## Port Linux
 
-Build nativo Linux x86_64/Mono concluído em 15/10/2026 com o módulo Linux Build Support instalado oficialmente pelo Unity Hub. `linux-build.log` registrou `TRAJETO_LINUX_BUILD_OK` e encerramento com código 0. O pacote tar.gz preserva permissões 0755 do player e dos scripts; o cabeçalho ELF confirma arquitetura x86_64. A execução nativa será registrada aqui após a validação do pacote no Ubuntu pelo workflow `linux-smoke.yml`.
+Build nativo Linux x86_64/Mono concluído em 15/10/2026 com o módulo Linux Build Support instalado oficialmente pelo Unity Hub. `linux-final-build.log` registrou `TRAJETO_LINUX_BUILD_OK` e encerramento com código 0. O pacote tar.gz preserva permissões 0755 do player e dos scripts; o cabeçalho ELF confirma arquitetura x86_64.
+
+**Execução nativa aprovada: 60/60 combinações**, nas três cenas, em **Ubuntu 22.04.5 LTS x86_64**, kernel 6.8, Unity 6000.6.4f1/Mono, X11/Xvfb e Mesa llvmpipe OpenGL 4.5. O [workflow 38794056999](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/actions/runs/38794056999) baixou o pacote da versão, validou SHA-256 e terminou com sucesso. O relatório registra seleção de endpoints/A=B nas três cenas, estado inicial não avaliado nos mapas geográficos e aproximação da FAESA preservando os endpoints. São 60 linhas `PASS`, zero `FAIL`, `Runtime errors: 0` na rotina do aplicativo e `TRAJETO_STAGE4_OK`.
+
+Os [relatórios e 13 capturas](Resultados/Linux) estão preservados no repositório e na distribuição. As imagens de comparação e aproximação da FAESA foram conferidas visualmente. O teste não incluiu cliques manuais de um usuário; usa as mesmas ações e raycasts da interface. O log nativo contém avisos de ausência de dispositivo de áudio no runner e fallback FMOD sem som; não houve validação de áudio. A renderização por software não comprova desempenho em GPU física. Vulkan, Wayland, Ubuntu 24.04 e outras distribuições não foram executados nesta validação.
+
+`Resultados/Linux/tested-package-sha256.txt` identifica o pacote baixado nessa execução. Após o teste, foram acrescentados documentos e evidências à distribuição; os arquivos do player permanecem idênticos e estão identificados em `Resultados/Linux/player-files-sha256.txt`. `SHA256SUMS.txt`, ao lado do tar.gz na versão publicada, verifica o pacote final completo. A compilação final das ferramentas de documentação encerrou com código 0 em `linux-final-compile.log`.
 
 As evidências anteriores do Windows (59 EditMode + 10 PlayMode e matriz de 60 casos do player) estão preservadas em [Resultados/Windows](Resultados/Windows). Não representam execução Linux.
 

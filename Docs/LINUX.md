@@ -2,6 +2,8 @@
 
 O port usa Unity **6000.6.4f1**, backend Mono e URP 17.6.0. Inclui as três cenas, começando pela expansão Praça–Ifes–FAESA, os mesmos perfis, editor físico, histórico, persistência e dados cartográficos locais.
 
+**Validado em Ubuntu 22.04.5:** 60/60 combinações aprovadas, com renderização gráfica via Xvfb/Mesa. Consulte [os resultados e limites](VALIDACAO.md) e a [captura da aproximação da FAESA](Resultados/Linux/Navigation-FAESA-Closeup.png).
+
 ## Executar o pacote
 
 Baixe `TrajetoInclusivo-Linux-x86_64.tar.gz` e `SHA256SUMS.txt` na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases). O pacote é nativo; não utiliza Wine e não exige instalar o Editor Unity.

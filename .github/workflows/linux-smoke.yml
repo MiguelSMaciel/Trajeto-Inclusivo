@@ -33,6 +33,8 @@ jobs:
           tar -xzf TrajetoInclusivo-Linux-x86_64.tar.gz
           bash -n TrajetoInclusivo-Linux-x86_64/TrajetoInclusivo.sh
           bash -n TrajetoInclusivo-Linux-x86_64/Testar-Linux.sh
+          cd TrajetoInclusivo-Linux-x86_64
+          sha256sum --quiet -c Documentacao/Resultados/Linux/player-files-sha256.txt
       - name: Executar as três cenas em Linux
         env:
           LIBGL_ALWAYS_SOFTWARE: '1'
@@ -40,6 +42,7 @@ jobs:
           mkdir -p linux-results
           uname -a > linux-results/environment.txt
           cat /etc/os-release >> linux-results/environment.txt
+          cp package/SHA256SUMS.txt linux-results/package-sha256.txt
           xvfb-run -a -s '-screen 0 1600x1000x24' ./package/TrajetoInclusivo-Linux-x86_64/Testar-Linux.sh "$GITHUB_WORKSPACE/linux-results"
       - name: Preservar relatórios e capturas
         if: always()

@@ -31,6 +31,13 @@ Todos os scripts do produto usam o namespace `TrajetoInclusivo`. Há assemblies 
 | GeographicDatasetContext | Separa modo não avaliado de hipóteses explícitas de teste |
 | GeographicSceneBuilder | Gera a cena da Etapa 2 a partir do snapshot local |
 | TestbedBuilder | Gera cena, três perfis, cinco cenários, materiais, meshes e prefabs |
+| DesktopBuild / WindowsBuild / LinuxBuild | Build Mono para Windows/Linux, seleção das três cenas e distribuição dos dados e documentos |
+
+## Plataformas e distribuição
+
+O código de execução compartilha as mesmas assemblies C# e URP nas duas plataformas; não depende de DLL nativa exclusiva do Windows. `DesktopBuild` concentra a preparação e recebe o `BuildTarget` dos menus Windows/Linux. O Linux usa `StandaloneLinux64`, Mono e OpenGL Core como primeira API gráfica, com Vulkan como alternativa.
+
+As saídas em `Builds` incluem os snapshots e grafos em `MapData`, os guias e evidências em `Documentacao` e os avisos de licença. `Tools/Package-Linux.ps1` gera tar.gz com permissões Unix e checksum, excluindo o backup interno de símbolos do Unity. O workflow `linux-smoke.yml` testa o pacote publicado em Ubuntu com display virtual e renderização Mesa. Os fontes e arquivos `.meta` são versionados; caches, executáveis e saídas de teste locais são ignorados pelo Git.
 
 ## Custos
 
