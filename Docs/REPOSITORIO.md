@@ -24,6 +24,12 @@ Use **Window → General → Test Runner** e execute EditMode e PlayMode. A vali
 
 O workflow testa o player já compilado e não precisa de licença do Unity Editor. A compilação pelo Editor continua sendo feita em uma instalação licenciada do Unity com o módulo de destino.
 
+## Publicar Windows
+
+Gere o build pelo menu Windows ou por `TrajetoInclusivo.Editor.WindowsBuild.Build`. Execute `pwsh -File Tools/Package-Windows.ps1` para criar `Distribution/TrajetoInclusivo-Windows-x86_64.zip` e `SHA256SUMS-Windows.txt`. O script atualiza a documentação do pacote e inclui o executável, DLLs, Mono, dados do player e `MapData`; exclui os backups de símbolos identificados pelo Unity como não distribuíveis.
+
+Publique esses dois arquivos como anexos da mesma versão do Linux, preservando os anexos Linux e seu `SHA256SUMS.txt`. Depois de baixar o ZIP, extraia toda a pasta e execute `TrajetoInclusivo.exe`; não execute diretamente dentro do visualizador de ZIP nem distribua apenas o `.exe`. Os binários ficam nos anexos da versão, sem entrar no histórico Git.
+
 ## Documentação e licenças
 
 [README](../README.md) contém uso e controles; [LINUX.md](LINUX.md) oferece o índice dos guias técnicos. `NOTICE.md` e os créditos dos snapshots acompanham a distribuição. Os dados OSM e suas derivações seguem ODbL 1.0; não atribua essa licença automaticamente ao código ou ao Unity. Uma licença para o código autoral ainda deve ser escolhida pelo titular.

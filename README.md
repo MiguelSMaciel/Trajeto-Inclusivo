@@ -1,5 +1,7 @@
 # Trajeto Inclusivo — Unity / Avenida Vitória
 
+**Windows x86_64:** baixe `TrajetoInclusivo-Windows-x86_64.zip` na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/tag/v0.1.0-linux), extraia toda a pasta e execute `TrajetoInclusivo.exe`. O ZIP inclui as três cenas, os dados e a documentação; mantenha as DLLs e pastas junto do executável. O checksum separado está em `SHA256SUMS-Windows.txt`.
+
 **Linux x86_64:** há um port nativo com as três cenas e toda a documentação. Consulte [LINUX.md](Docs/LINUX.md) para executar, compilar e validar. Os pacotes ficam na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases); o repositório contém os fontes, assets e documentação, sem os caches do Unity.
 
 **Validação Linux:** 60/60 casos aprovados em Ubuntu 22.04.5, usando Xvfb/Mesa. Relatórios, capturas e limites em [VALIDACAO.md](Docs/VALIDACAO.md). Instruções para desenvolvimento e publicação em [REPOSITORIO.md](Docs/REPOSITORIO.md).
