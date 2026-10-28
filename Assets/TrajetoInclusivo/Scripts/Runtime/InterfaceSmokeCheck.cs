@@ -81,6 +81,27 @@ namespace TrajetoInclusivo
                 ui.ShowProfileComparison(false);
                 var issue=sim.comparison.conventional.segments.First(s=>s.rating==AccessibilityRating.Inaccessible).segment;
                 ui.InspectSegment(issue);yield return null;yield return new WaitForEndOfFrame();CaptureFrame(output,"Stage4-Inspecao-"+scene,report);
+                if(scene=="AvenidaVitoria_Testbed")
+                {
+                    var playback=FindAnyObjectByType<RouteInspection>();
+                    var originalRoute=sim.accessible;float baseSpeed=playback.speedMetresPerSecond,timeScale=Time.timeScale;
+                    playback.speedMetresPerSecond=.1f;playback.Begin();
+                    Vector3 start=playback.marker.position;float expected=0;bool speedOk=true;
+                    float[] factors={.5f,1f,1.5f,2f,4f,8f};
+                    for(int speed=0;speed<factors.Length;speed++)
+                    {
+                        var before=playback.marker.position;playback.SetPlaybackSpeedIndex(speed);
+                        speedOk &= playback.marker.position==before;
+                        for(int frame=0;frame<3;frame++){yield return null;expected+=.1f*factors[speed]*Time.deltaTime;}
+                        speedOk &= Mathf.Abs(Vector3.Distance(start,playback.marker.position)-expected)<.002f && playback.Running;
+                    }
+                    speedOk &= sim.accessible==originalRoute && Time.timeScale==timeScale;
+                    playback.Stop();speedOk &= playback.PlaybackSpeedMultiplier==8;
+                    playback.speedMetresPerSecond=baseSpeed;playback.Begin();sim.selectedSegment=null;
+                    yield return null;yield return new WaitForEndOfFrame();CaptureFrame(output,"Playback-8x",report);
+                    playback.Stop();playback.SetPlaybackSpeedIndex(1);
+                    passed &= speedOk;report.AppendLine("Playback 0.5x / 1x / 1.5x / 2x / 4x / 8x, continuous position, same route and global time: "+speedOk);
+                }
                 var endpoint=sim.origin;ui.BeginPicking(false);Physics.SyncTransforms();
                 bool picking=ui.HandleMapRay(new Ray(endpoint.Position+Vector3.up*5,Vector3.down));yield return null;yield return null;
                 picking &= sim.destination==endpoint && sim.accessible.Found && sim.accessible.distance==0;passed &= picking;report.AppendLine(scene+" endpoint picking / zero-length route: "+picking);

@@ -17,6 +17,7 @@ namespace TrajetoInclusivo
         private string csvPath="",csvDatum="Plano artificial local",csvVerticalOrigin="0";
         private bool csvSimulated=true;
         private readonly Dictionary<string,string> numericFields=new Dictionary<string,string>();
+        private static readonly string[] playbackSpeedLabels={"0,5×","1×","1,5×","2×","4×","8×"};
         private Rect Toolbar=>Layout.toolbar;
         private void DrawWorldToolbar()
         {
@@ -25,7 +26,15 @@ namespace TrajetoInclusivo
             GUILayout.BeginHorizontal();GUI.enabled=editor.CanUndo;if(GUILayout.Button("Desfazer",button))editor.Undo();
             GUI.enabled=editor.CanRedo;if(GUILayout.Button("Refazer",button))editor.Redo();GUI.enabled=true;
             if(GUILayout.Button("Salvar experiência",button))editor.Save();if(GUILayout.Button("Carregar experiência",button))editor.Load();GUILayout.EndHorizontal();
-            DrawLandmarkNavigation();GUILayout.Label(editor.status,small);GUILayout.EndArea();
+            DrawLandmarkNavigation();
+            if(inspection!=null)
+            {
+                GUILayout.BeginHorizontal();GUILayout.Label("Velocidade:",small,GUILayout.Width(76));
+                int speed=GUILayout.SelectionGrid(inspection.PlaybackSpeedIndex,playbackSpeedLabels,playbackSpeedLabels.Length,button);
+                if(speed!=inspection.PlaybackSpeedIndex)inspection.SetPlaybackSpeedIndex(speed);
+                GUILayout.EndHorizontal();
+            }
+            GUILayout.Label(editor.status,small);GUILayout.EndArea();
         }
         private void ReadDraft(AccessibilitySegment s)
         {

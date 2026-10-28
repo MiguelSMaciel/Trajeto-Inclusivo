@@ -6,7 +6,7 @@ on:
       release_tag:
         description: Versão publicada que será validada
         required: true
-        default: v0.1.0-linux
+        default: v0.2.0
         type: string
 
 permissions:
@@ -34,7 +34,11 @@ jobs:
           bash -n TrajetoInclusivo-Linux-x86_64/TrajetoInclusivo.sh
           bash -n TrajetoInclusivo-Linux-x86_64/Testar-Linux.sh
           cd TrajetoInclusivo-Linux-x86_64
-          sha256sum --quiet -c Documentacao/Resultados/Linux/player-files-sha256.txt
+          if [ -f player-files-sha256.txt ]; then
+            sha256sum --quiet -c player-files-sha256.txt
+          else
+            sha256sum --quiet -c Documentacao/Resultados/Linux/player-files-sha256.txt
+          fi
       - name: Executar as três cenas em Linux
         env:
           LIBGL_ALWAYS_SOFTWARE: '1'

@@ -10,6 +10,12 @@ Na seleção de A/B, somente cliques que atingem um nó visível confirmam o pon
 
 Digitar em cotas, referência vertical ou caminho CSV bloqueia WASD/Q/E, T e Home enquanto o campo mantém foco. Clique no mapa para liberar o foco e voltar à navegação. Campos numéricos inválidos desabilitam a aplicação do trecho e mostram uma mensagem. Use ponto decimal. Os painéis e o viewport usam escala calculada a partir de largura e altura, preservando separação em formatos comuns de janela e em orientação vertical; em janelas muito pequenas, os textos também ficam menores.
 
+## Velocidade de reprodução
+
+A barra superior contém **Velocidade**, com botões **0,5×, 1×, 1,5×, 2×, 4× e 8×**. Use **Acompanhar rota acessível** no painel esquerdo e escolha um fator, antes ou durante o movimento. A troca é imediata e mantém a posição atual da cadeira. O padrão é 1×; parar, reiniciar ou recalcular a rota preserva a opção na cena atual. Trocar de mapa volta ao padrão.
+
+O controle acelera somente o acompanhamento cinemático. As distâncias, dificuldades, perfis e resultados das rotas permanecem iguais; o tempo global e os controles de câmera não são acelerados. Os testes `PlaybackSpeedTests` cobrem mudança durante o movimento, seis multiplicadores, preservação ao parar/recalcular e chegada exata ao destino mesmo em alta velocidade.
+
 ## Critérios do pedido e evidências
 
 | Critério | Evidência automatizada |

@@ -5,6 +5,15 @@ param(
 $ErrorActionPreference='Stop'
 $linuxInput=(Resolve-Path -LiteralPath $InputDirectory).Path
 if(-not (Test-Path -LiteralPath (Join-Path $linuxInput 'TrajetoInclusivo.x86_64'))){throw 'Gere o build Linux antes de empacotar.'}
+$runtimeManifest=[Collections.Generic.List[string]]::new()
+foreach($file in Get-ChildItem -LiteralPath $linuxInput -File -Recurse | Sort-Object FullName){
+    $relative=[IO.Path]::GetRelativePath($linuxInput,$file.FullName).Replace('\','/')
+    if($relative -match '^(TrajetoInclusivo_Data/|TrajetoInclusivo\.x86_64$|UnityPlayer\.so$|libdecor[^/]*$|UnityCrashHandler64$)'){
+        $digest=(Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+        $runtimeManifest.Add($digest+'  '+$relative)
+    }
+}
+[IO.File]::WriteAllText((Join-Path $linuxInput 'player-files-sha256.txt'),($runtimeManifest -join "`n")+"`n",[Text.UTF8Encoding]::new($false))
 New-Item -ItemType Directory -Path $OutputDirectory -Force | Out-Null
 $linuxArchive=Join-Path (Resolve-Path -LiteralPath $OutputDirectory).Path 'TrajetoInclusivo-Linux-x86_64.tar.gz'
 $archiveStream=[IO.File]::Create($linuxArchive)

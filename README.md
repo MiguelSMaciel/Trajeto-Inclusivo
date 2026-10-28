@@ -1,6 +1,8 @@
 # Trajeto Inclusivo — Unity / Avenida Vitória
 
-**Windows x86_64:** baixe `TrajetoInclusivo-Windows-x86_64.zip` na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/tag/v0.1.0-linux), extraia toda a pasta e execute `TrajetoInclusivo.exe`. O ZIP inclui as três cenas, os dados e a documentação; mantenha as DLLs e pastas junto do executável. O checksum separado está em `SHA256SUMS-Windows.txt`.
+**Novo na 0.2.0:** a barra superior permite mudar a velocidade do acompanhamento para **0,5×, 1×, 1,5×, 2×, 4× e 8×**, sem reiniciar o percurso.
+
+**Windows x86_64:** baixe `TrajetoInclusivo-Windows-x86_64.zip` na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/tag/v0.2.0), extraia toda a pasta e execute `TrajetoInclusivo.exe`. O ZIP inclui as três cenas, os dados e a documentação; mantenha as DLLs e pastas junto do executável. O checksum separado está em `SHA256SUMS-Windows.txt`.
 
 **Linux x86_64:** há um port nativo com as três cenas e toda a documentação. Consulte [LINUX.md](Docs/LINUX.md) para executar, compilar e validar. Os pacotes ficam na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases); o repositório contém os fontes, assets e documentação, sem os caches do Unity.
 
@@ -44,7 +46,7 @@ Também é possível gerar um programa local com **Trajeto Inclusivo → Gerar e
 - **Histórico e persistência:** a barra central permite desfazer/refazer até 12 comandos e salvar/carregar uma experiência JSON na pasta de dados do aplicativo. A mensagem mostra o caminho. Inclui obstáculos, geometria, grade, estado de avaliação, A/B e perfil.
 - **Elevação:** no painel de um trecho, aplique a grade artificial de demonstração ou importe um CSV local regular `x,z,elevation`. Informe a mesma origem horizontal da cena, referência vertical e origem a subtrair. Dados importados permanecem não verificados; não habilitam avaliação automaticamente. Veja `Docs/EDICAO_E_RELEVO.md`.
 - **Câmera:** WASD move; Q/E altera altura; botão direito orbita; roda aproxima/afasta; T alterna vista superior; Home enquadra a área. “Focar percurso disponível” aproxima o caminho calculado para inspecionar seus trechos. Durante a digitação em campos, os atalhos de teclado ficam suspensos; clique no mapa para voltar à navegação. Esc fecha o editor de trechos.
-- **Acompanhar rota acessível:** anima uma cadeira esquemática cinematicamente. Alterações de rota encerram a inspeção em andamento. Não há dinâmica de rodas, balanço ou esforço biomecânico.
+- **Acompanhar rota acessível:** anima uma cadeira esquemática cinematicamente. Na barra superior, **Velocidade** permite escolher **0,5×, 1×, 1,5×, 2×, 4× ou 8×**, inclusive durante o movimento, sem reiniciar o percurso. O padrão é 1×. Alterações de rota encerram a inspeção em andamento; a velocidade escolhida é preservada na cena. Não há dinâmica de rodas, balanço ou esforço biomecânico.
 
 Verde significa acessível **pelas hipóteses do perfil**; amarelo indica dificuldade; vermelho indica impedimento; cinza indica dados insuficientes. A linha azul representa o caminho convencional, que pode atravessar um trecho vermelho para o perfil. Interdições físicas eliminam a passagem de ambas as buscas.
 

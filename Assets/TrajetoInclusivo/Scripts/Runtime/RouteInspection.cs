@@ -8,12 +8,20 @@ namespace TrajetoInclusivo
         public CameraController cameraController;
         public Transform marker;
         [Min(.1f)] public float speedMetresPerSecond = 2;
+        private static readonly float[] playbackSpeeds = { .5f, 1f, 1.5f, 2f, 4f, 8f };
+        public int PlaybackSpeedIndex { get; private set; } = 1;
+        public float PlaybackSpeedMultiplier => playbackSpeeds[PlaybackSpeedIndex];
         public bool Running { get; private set; }
         private RouteResult route;
         private int edge;
         private float travelled;
 
         private void Start() { marker.gameObject.SetActive(false); simulation.RoutesChanged += Stop; }
+        public void SetPlaybackSpeedIndex(int index)
+        {
+            if (index < 0 || index >= playbackSpeeds.Length) throw new System.ArgumentOutOfRangeException(nameof(index));
+            PlaybackSpeedIndex = index;
+        }
         public void Begin()
         {
             Stop();
@@ -26,7 +34,7 @@ namespace TrajetoInclusivo
         private void Update()
         {
             if (!Running) return;
-            travelled += speedMetresPerSecond * Time.deltaTime;
+            travelled += speedMetresPerSecond * PlaybackSpeedMultiplier * Time.deltaTime;
             while (edge < route.arcs.Count && travelled >= route.arcs[edge].segment.Length)
             {
                 travelled -= route.arcs[edge].segment.Length; edge++;

@@ -1,6 +1,14 @@
-# Validação local — 15/10/2026
+# Validação do projeto
 
 Ambiente: Windows, Unity 6000.6.4f1, URP 17.6.0. Projeto em `E:/Jogos/Unity/Trajeto Inclusivo`.
+
+## Versão 0.2.0 — velocidade de reprodução — 28/10/2026
+
+**72 testes aprovados, zero falhas:** 59 EditMode e 13 PlayMode. Os XMLs estão em [Resultados/Velocidade-0.2.0](Resultados/Velocidade-0.2.0). Três novos testes integrados conferem os fatores 0,5×/1×/1,5×/2×/4×/8× durante o movimento, posição contínua ao mudar a velocidade, rota calculada preservada, manutenção ao parar/reiniciar/recalcular e chegada exata ao destino em alta velocidade. O tempo global permanece inalterado.
+
+A rotina `-stage4-smoke` dos executáveis também verifica os seis fatores e captura a barra superior com 8× selecionado em `Playback-8x.png`, além da matriz existente de 60 casos. Os registros novos ficam em `Resultados/Velocidade-0.2.0`; o histórico anterior permanece abaixo.
+
+**Windows 0.2.0 aprovado:** executável extraído do ZIP passou em 60/60 combinações, com os seis multiplicadores e posição contínua confirmados, rota e tempo global preservados e `Runtime errors: 0`. Capturas em 1600×1000 (8×) e 1024×768 foram conferidas, sem sobreposição dos novos botões. Evidências em `Resultados/Velocidade-0.2.0/Windows`.
 
 ## Port Linux
 

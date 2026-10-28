@@ -1,5 +1,7 @@
 # Evidências preservadas
 
+`Velocidade-0.2.0` contém os XMLs da atualização do controle de reprodução (59 EditMode e 13 PlayMode, total 72). A subpasta `Windows` preserva os 60 casos do player, a verificação dos seis fatores e a captura em 8×. Os resultados Linux da versão podem ser consultados no workflow `Validar executável Linux`, com a tag `v0.2.0`.
+
 `Windows` contém os XMLs NUnit da última validação da navegação (59 testes EditMode e 10 PlayMode), a matriz CSV de 60 combinações e o relatório do player Windows. São registros da execução descrita em `Docs/VALIDACAO.md`, anterior ao port; as mudanças de port concentram-se em build, distribuição e documentação.
 
 Os arquivos `Windows/publicacao-2026-10-19-player.csv` e `.txt` registram uma nova execução de 60/60 casos do programa extraído do ZIP Windows preparado para publicação. Os XMLs NUnit anteriores permanecem como histórico; não foram reexecutados para essa alteração de empacotamento.
