@@ -13,6 +13,7 @@
 *.log
 /TestResults/
 /Distribution/
+/output/
 /.cache/
 /.tools/
 .DS_Store

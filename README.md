@@ -1,5 +1,7 @@
 # Trajeto Inclusivo — Unity / Avenida Vitória
 
+**Manual de uso e apresentação:** [leia o manual completo](Docs/MANUAL_DE_USO.md), com telas explicadas, exercícios guiados e roteiro de demonstração de 12 minutos. Baixe o [PDF ilustrado](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/Manual_Trajeto_Inclusivo_0.2.0.pdf) ou o [Word editável](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/Manual_Trajeto_Inclusivo_0.2.0.docx). O manual tem 25 páginas; as páginas 20 a 22 ajudam a ensaiar a apresentação.
+
 **Novo na 0.2.0:** a barra superior permite mudar a velocidade do acompanhamento para **0,5×, 1×, 1,5×, 2×, 4× e 8×**, sem reiniciar o percurso.
 
 **Windows x86_64:** baixe `TrajetoInclusivo-Windows-x86_64.zip` na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/tag/v0.2.0), extraia toda a pasta e execute `TrajetoInclusivo.exe`. O ZIP inclui as três cenas, os dados e a documentação; mantenha as DLLs e pastas junto do executável. O checksum separado está em `SHA256SUMS-Windows.txt`.

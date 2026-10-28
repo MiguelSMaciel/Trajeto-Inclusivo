@@ -1,5 +1,15 @@
 # Baixar o Trajeto Inclusivo
 
+## Manual de uso e apresentação
+
+Manual ilustrado de 25 páginas para Windows e Linux, com explicação das telas, campos do editor, exercícios e roteiro de apresentação de 12 minutos.
+
+- [Baixar o manual em PDF](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/Manual_Trajeto_Inclusivo_0.2.0.pdf).
+- [Baixar o manual em Word editável](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/Manual_Trajeto_Inclusivo_0.2.0.docx).
+- [Ler o manual no GitHub](../Docs/MANUAL_DE_USO.md).
+
+Para preparar a demonstração, consulte as páginas 20 a 22 do PDF ou Word. O manual é um download separado dos pacotes do aplicativo.
+
 ## Windows x86_64
 
 **[Clique aqui para baixar o ZIP Windows](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/TrajetoInclusivo-Windows-x86_64.zip)** — aproximadamente 55 MB.
