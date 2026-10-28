@@ -1,0 +1,46 @@
+AvenidaVitoria_FAESA frame limit=60, vSync=0: True
+AvenidaVitoria_FAESA sampled FPS over 30 frames=2.8, within configured ceiling with 20% timing tolerance: True
+AvenidaVitoria_FAESA initial unknown: True
+Stage4-NaoAvaliado-AvenidaVitoria_FAESA: captured framebuffer with IMGUI
+FAESA landmark focus without changing endpoints: True
+Navigation-FAESA-Closeup: captured framebuffer with IMGUI
+Stage4-Comparacao-AvenidaVitoria_FAESA: captured framebuffer with IMGUI
+Stage4-Perfis-AvenidaVitoria_FAESA: captured framebuffer with IMGUI
+Stage4-Inspecao-AvenidaVitoria_FAESA: captured framebuffer with IMGUI
+Nodes-Inspecao-AvenidaVitoria_FAESA: captured framebuffer with IMGUI
+Nodes-FAESA: captured framebuffer with IMGUI
+AvenidaVitoria_FAESA node raycast, unchanged world, scenario locator, endpoints and closing: True
+AvenidaVitoria_FAESA endpoint picking / zero-length route: True
+AvenidaVitoria_Geografico frame limit=60, vSync=0: True
+AvenidaVitoria_Geografico sampled FPS over 30 frames=3.1, within configured ceiling with 20% timing tolerance: True
+AvenidaVitoria_Geografico initial unknown: True
+Stage4-NaoAvaliado-AvenidaVitoria_Geografico: captured framebuffer with IMGUI
+Stage4-Comparacao-AvenidaVitoria_Geografico: captured framebuffer with IMGUI
+Stage4-Perfis-AvenidaVitoria_Geografico: captured framebuffer with IMGUI
+Stage4-Inspecao-AvenidaVitoria_Geografico: captured framebuffer with IMGUI
+Nodes-Inspecao-AvenidaVitoria_Geografico: captured framebuffer with IMGUI
+AvenidaVitoria_Geografico node raycast, unchanged world, scenario locator, endpoints and closing: True
+AvenidaVitoria_Geografico endpoint picking / zero-length route: True
+AvenidaVitoria_Testbed frame limit=60, vSync=0: True
+AvenidaVitoria_Testbed sampled FPS over 30 frames=5.1, within configured ceiling with 20% timing tolerance: True
+Stage4-Comparacao-AvenidaVitoria_Testbed: captured framebuffer with IMGUI
+Stage4-Perfis-AvenidaVitoria_Testbed: captured framebuffer with IMGUI
+Stage4-Inspecao-AvenidaVitoria_Testbed: captured framebuffer with IMGUI
+Playback-8x: captured framebuffer with IMGUI
+Playback 0.5x / 1x / 1.5x / 2x / 4x / 8x, continuous position, same route and global time: True
+Nodes-Inspecao-AvenidaVitoria_Testbed: captured framebuffer with IMGUI
+AvenidaVitoria_Testbed node raycast, unchanged world, scenario locator, endpoints and closing: True
+AvenidaVitoria_Testbed endpoint picking / zero-length route: True
+Stage4-1024x768: captured framebuffer with IMGUI
+Nodes-1024x768: captured framebuffer with IMGUI
+Window layout requested=1600x1000 actual=1600x1000, cropped viewport, aligned labels, clear top margin, unchanged world: True
+WindowLayout-1600x1000: captured framebuffer with IMGUI
+Window layout requested=1280x720 actual=1280x720, cropped viewport, aligned labels, clear top margin, unchanged world: True
+WindowLayout-1280x720: captured framebuffer with IMGUI
+Window layout requested=1920x1080 actual=1920x1080, cropped viewport, aligned labels, clear top margin, unchanged world: True
+WindowLayout-1920x1080: captured framebuffer with IMGUI
+Window layout requested=1024x768 actual=1024x768, cropped viewport, aligned labels, clear top margin, unchanged world: True
+WindowLayout-1024x768: captured framebuffer with IMGUI
+Player window changed size: True
+Runtime errors: 0
+TRAJETO_STAGE4_OK

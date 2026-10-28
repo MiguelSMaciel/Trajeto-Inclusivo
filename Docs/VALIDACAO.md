@@ -10,7 +10,9 @@ Ambiente: Windows, Unity 6000.6.4f1, URP 17.6.0. Projeto em `E:/Jogos/Unity/Traj
 
 A configuração do projeto foi conferida com `m_DisableAudio: 1` e volume principal zero; o manifest permanece sem o módulo de áudio. Fontes e cenas não contêm fontes de som ou listeners. Isso não diagnostica som físico vindo do gabinete. Não houve medição acústica, de consumo elétrico ou comparação quantitativa de carga da GPU.
 
-Relatórios e XML em [Resultados/Desempenho-0.3.2](Resultados/Desempenho-0.3.2). As evidências Linux são acrescentadas ao repositório depois da execução sobre o pacote publicado.
+**Linux 0.3.2 aprovado:** o [workflow 40748263203](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/actions/runs/40748263203) verificou o pacote publicado e o manifesto de runtime em Ubuntu 22.04.5 com Xvfb/Mesa. Passou em 60/60 combinações e confirmou a configuração de 60 FPS com VSync 0 nas três cenas. Nesse ambiente com renderização por software, as amostras ficaram em 2,8, 3,1 e 5,1 FPS, abaixo do teto. Isso não comprova desempenho de 60 FPS em Linux nem substitui uma medição com GPU física. Inspeção, velocidades e quatro tamanhos de janela passaram; a rotina registrou `Runtime errors: 0`.
+
+Relatórios, XML, ambiente e checksums em [Resultados/Desempenho-0.3.2](Resultados/Desempenho-0.3.2). Os registros Linux foram acrescentados ao repositório após a validação do pacote publicado, preservando os arquivos testados.
 
 ## Versão 0.3.1 — janela e viewport — 28/10/2026
 
