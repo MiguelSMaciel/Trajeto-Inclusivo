@@ -2,7 +2,7 @@
 
 ## Windows x86_64
 
-**[Clique aqui para baixar o ZIP Windows](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/TrajetoInclusivo-Windows-x86_64.zip)** — aproximadamente 54 MB.
+**[Clique aqui para baixar o ZIP Windows](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/TrajetoInclusivo-Windows-x86_64.zip)** — aproximadamente 55 MB.
 
 Extraia toda a pasta do ZIP e execute `TrajetoInclusivo.exe`. Mantenha as DLLs e as pastas junto do executável. O pacote contém as três cenas, incluindo FAESA, os dados e a documentação; não é necessário instalar o Unity Editor.
 

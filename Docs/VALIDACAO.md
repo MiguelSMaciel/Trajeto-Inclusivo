@@ -10,6 +10,8 @@ A rotina `-stage4-smoke` dos executáveis também verifica os seis fatores e cap
 
 **Windows 0.2.0 aprovado:** executável extraído do ZIP passou em 60/60 combinações, com os seis multiplicadores e posição contínua confirmados, rota e tempo global preservados e `Runtime errors: 0`. Capturas em 1600×1000 (8×) e 1024×768 foram conferidas, sem sobreposição dos novos botões. Evidências em `Resultados/Velocidade-0.2.0/Windows`.
 
+**Linux 0.2.0 aprovado:** o [workflow 40723345470](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/actions/runs/40723345470) verificou o pacote publicado e seu manifesto de runtime e passou em 60/60 combinações no Ubuntu 22.04.5 com Xvfb/Mesa. Os seis fatores de reprodução, posição contínua, rota e tempo global foram novamente confirmados; a rotina registrou `Runtime errors: 0`. A captura em 8× foi conferida. Relatórios, ambiente, checksum do pacote e captura estão em `Resultados/Velocidade-0.2.0/Linux`. Os pacotes publicados permanecem idênticos aos testados; estas evidências Linux foram acrescentadas ao repositório após a execução.
+
 ## Port Linux
 
 Build nativo Linux x86_64/Mono concluído em 15/10/2026 com o módulo Linux Build Support instalado oficialmente pelo Unity Hub. `linux-final-build.log` registrou `TRAJETO_LINUX_BUILD_OK` e encerramento com código 0. O pacote tar.gz preserva permissões 0755 do player e dos scripts; o cabeçalho ELF confirma arquitetura x86_64.
