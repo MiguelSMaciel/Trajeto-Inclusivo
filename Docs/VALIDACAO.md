@@ -10,7 +10,9 @@ A localização de alterações é exercitada nas três cenas: o cenário de ram
 
 **Windows 0.3.0 aprovado:** a rotina do executável passou em 60/60 combinações e confirmou inspeção de nós, preservação da experiência ao consultar, localização de alterações, uso como A/B e fechamento nas três cenas. Registrou `Runtime errors: 0` e `TRAJETO_STAGE4_OK`. A interface foi conferida em 1600×1000 e 1024×768. Relatórios e capturas em `Resultados/Nos-0.3.0/Windows`. A rotina aciona os mesmos métodos públicos e raycasts da interface; não simula cliques físicos do mouse na janela.
 
-O pacote Linux usa os mesmos fontes e possui uma validação nativa própria pelo workflow. Os resultados dessa execução são acrescentados ao repositório depois da publicação do pacote; consulte esta página online e a aba Actions para as evidências mais recentes. A validação continua computacional, sem avaliação de campo ou ensaio de usabilidade com participantes.
+**Linux 0.3.0 aprovado:** o [workflow 40740969228](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/actions/runs/40740969228) verificou o checksum do pacote publicado e o manifesto de runtime, passando em 60/60 combinações no Ubuntu 22.04.5 com Xvfb/Mesa. Confirmou a inspeção de nós nas três cenas, preservação da experiência ao consultar, localização de alterações, uso como A/B, fechamento e os seis fatores de reprodução. A rotina registrou `Runtime errors: 0`; as capturas da inspeção de GeoRamp e FAESA foram conferidas. Relatórios, ambiente, checksum e capturas em `Resultados/Nos-0.3.0/Linux`.
+
+Os pacotes permanecem idênticos aos verificados; os registros Linux foram acrescentados ao repositório após a execução sobre o pacote publicado. A validação continua computacional, sem avaliação de campo ou ensaio de usabilidade com participantes.
 
 ## Versão 0.2.0 — velocidade de reprodução — 28/10/2026
 
