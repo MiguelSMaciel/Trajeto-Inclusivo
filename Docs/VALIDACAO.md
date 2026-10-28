@@ -2,6 +2,14 @@
 
 Ambiente: Windows, Unity 6000.6.4f1, URP 17.6.0. Projeto em `E:/Jogos/Unity/Trajeto Inclusivo`.
 
+## Versão 0.3.1 — janela e viewport — 28/10/2026
+
+**78 testes aprovados, zero falhas:** 62 EditMode e 16 PlayMode. A suíte de layout agora cobre oito proporções e tamanhos, incluindo 800×600, 1600×1000 e 2560×1080. Confere que o viewport fica abaixo da barra e acima dos créditos, com a conversão correta entre as origens de coordenadas da câmera e da interface. O teste integrado de navegação verifica que os rótulos apontam para a projeção dos nós no viewport recortado. Após ajustar o bloqueio de cliques nas margens, esse teste foi executado novamente e aprovado.
+
+**Windows 0.3.1 aprovado:** 60/60 combinações da matriz, inspeção nas três cenas, seis fatores de reprodução e zero erros de execução. A rotina alterou a janela para 1600×1000, 1280×720, 1920×1080 e 1024×768; em cada tamanho confirmou viewport alinhado à área central, rótulos projetados corretamente, margem superior preenchida e estado da experiência preservado. As capturas foram conferidas visualmente. A leitura dos estilos da janela pelo Win32 confirmou `WS_THICKFRAME` e `WS_MAXIMIZEBOX`, permitindo redimensionamento pelas bordas e botão de maximizar. Não foi simulado um clique físico nesse botão.
+
+XMLs, relatórios e capturas estão em [Resultados/Janela-0.3.1](Resultados/Janela-0.3.1). A validação nativa Linux usa o pacote publicado, e suas evidências são acrescentadas ao repositório após o workflow.
+
 ## Versão 0.3.0 — inspeção de nós — 28/10/2026
 
 **75 testes aprovados, zero falhas:** 59 EditMode e 16 PlayMode. Evidências em [Resultados/Nos-0.3.0](Resultados/Nos-0.3.0). Os três testes novos verificam seleção de nó por raycast sem alterar A/B, rota ou JSON da experiência, prioridade da escolha de A/B, atualização e remoção do destaque, passagem ao editor de um trecho, uso do nó como origem/destino, estado inicial não avaliado preservado e recusa de nós fora da rede.

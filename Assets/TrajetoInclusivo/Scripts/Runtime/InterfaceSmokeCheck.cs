@@ -128,9 +128,40 @@ namespace TrajetoInclusivo
                     ui.InspectNode(elevated,true);yield return null;yield return new WaitForEndOfFrame();CaptureFrame(output,"Nodes-1024x768",report);
                 }
             }
+            yield return SceneManager.LoadSceneAsync(scenes[0]);yield return null;yield return null;
+            var windowUi=FindAnyObjectByType<SimulationUI>();var windowSim=FindAnyObjectByType<SimulationController>();var windowCamera=FindAnyObjectByType<CameraController>();
+            var unchangedRoute=windowSim.conventional;string unchangedWorld=windowSim.worldEditor.CaptureJson();
+            int firstWidth=Screen.width,firstHeight=Screen.height;bool resized=false;
+            foreach(var size in new[]{new Vector2Int(1600,1000),new Vector2Int(1280,720),new Vector2Int(1920,1080),new Vector2Int(1024,768)})
+            {
+                Screen.SetResolution(size.x,size.y,FullScreenMode.Windowed);
+                for(int frame=0;frame<5;frame++)yield return null;
+                windowCamera.FrameRoute(windowSim.conventional);yield return null;yield return new WaitForEndOfFrame();
+                bool layoutOk=CheckWindowLayout(windowUi,windowCamera) && unchangedRoute==windowSim.conventional && unchangedWorld==windowSim.worldEditor.CaptureJson();
+                resized |= Screen.width!=firstWidth || Screen.height!=firstHeight;
+                passed &= layoutOk;report.AppendLine($"Window layout requested={size.x}x{size.y} actual={Screen.width}x{Screen.height}, cropped viewport, aligned labels, clear top margin, unchanged world: {layoutOk}");
+                CaptureFrame(output,$"WindowLayout-{Screen.width}x{Screen.height}",report);
+            }
+            passed &= resized;report.AppendLine("Player window changed size: "+resized);
             passed &= errors==0;report.AppendLine("Runtime errors: "+errors);report.AppendLine(passed?"TRAJETO_STAGE4_OK":"TRAJETO_STAGE4_FAILED");
             File.WriteAllText(Path.Combine(output,"Stage4-Player-Matrix.csv"),csv.ToString());File.WriteAllText(Path.Combine(output,"Stage4-Player.txt"),report.ToString());
             Debug.Log(passed?"TRAJETO_STAGE4_OK":"TRAJETO_STAGE4_FAILED");Application.Quit(passed?0:1);
+        }
+        private static bool CheckWindowLayout(SimulationUI ui,CameraController camera)
+        {
+            var layout=new SimulationLayout(Screen.width,Screen.height);var pixels=camera.view.pixelRect;
+            bool valid=Mathf.Abs(pixels.xMin-layout.map.xMin*layout.scale)<1 && Mathf.Abs(pixels.xMax-layout.map.xMax*layout.scale)<1
+                && Mathf.Abs(pixels.yMin-(Screen.height-layout.map.yMax*layout.scale))<1 && Mathf.Abs(pixels.yMax-(Screen.height-layout.map.yMin*layout.scale))<1;
+            foreach(var marker in ui.GetLandmarkMarkers())
+            {
+                var screen=camera.view.WorldToScreenPoint(marker.node.Position+Vector3.up*1.5f);
+                var anchor=new Vector2(Mathf.Clamp(screen.x/layout.scale,layout.map.xMin+8,layout.map.xMax-8),Mathf.Clamp((Screen.height-screen.y)/layout.scale,layout.map.yMin+8,layout.map.yMax-8));
+                valid &= Vector2.Distance(marker.anchor,anchor)<.1f && !marker.rect.Overlaps(layout.toolbar) && !marker.rect.Overlaps(layout.footer);
+            }
+            var texture=ScreenCapture.CaptureScreenshotAsTexture();
+            if(texture==null)return false;
+            var top=texture.GetPixel(texture.width/2,texture.height-4);valid &= Mathf.Max(top.r,top.g,top.b)<.15f;Destroy(texture);
+            return valid;
         }
         private static void CaptureFrame(string output,string name,StringBuilder report)
         {

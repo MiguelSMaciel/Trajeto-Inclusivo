@@ -52,6 +52,7 @@ namespace TrajetoInclusivo.Tests
             Assert.That(comparison.accessible.descent,Is.Zero);Assert.That(comparison.accessible.segments,Is.Empty);
         }
         [TestCase(1024,768)][TestCase(1280,720)][TestCase(1920,1080)][TestCase(2560,1440)][TestCase(900,1200)]
+        [TestCase(1600,1000)][TestCase(2560,1080)][TestCase(800,600)]
         public void PanelsToolbarAndViewportRemainSeparatedAtDifferentAspectRatios(int width,int height)
         {
             var layout=new SimulationLayout(width,height);Assert.That(layout.left.Overlaps(layout.right),Is.False);
@@ -59,6 +60,11 @@ namespace TrajetoInclusivo.Tests
             Assert.That(layout.toolbar.Overlaps(layout.footer),Is.False);
             Assert.That(layout.viewport.xMin*width,Is.GreaterThan(layout.left.xMax*layout.scale));
             Assert.That(layout.viewport.xMax*width,Is.LessThan(layout.right.xMin*layout.scale));
+            Assert.That(layout.map.Overlaps(layout.toolbar)||layout.map.Overlaps(layout.footer),Is.False,"O mapa não deve aparecer atrás das barras.");
+            Assert.That(layout.map.yMin,Is.GreaterThan(layout.toolbar.yMax));
+            Assert.That(layout.map.yMax,Is.LessThan(layout.footer.yMin));
+            Assert.That((1-layout.viewport.yMax)*height,Is.EqualTo(layout.map.yMin*layout.scale).Within(.01));
+            Assert.That((1-layout.viewport.yMin)*height,Is.EqualTo(layout.map.yMax*layout.scale).Within(.01));
         }
     }
 }

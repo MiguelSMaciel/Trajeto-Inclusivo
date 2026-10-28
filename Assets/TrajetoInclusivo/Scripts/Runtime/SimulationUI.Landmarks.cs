@@ -69,13 +69,14 @@ namespace TrajetoInclusivo
         {
             var visible=new List<PedestrianNode>();var anchors=new List<Vector2>();var outside=new List<bool>();
             var view=cameraController.view;
+            var map=Layout.map;
             foreach(var node in LandmarkNodes())
             {
                 var p=view.WorldToViewportPoint(node.Position+Vector3.up*1.5f);if(p.z<view.nearClipPlane)continue;
-                visible.Add(node);anchors.Add(new Vector2((SceneViewport.x+p.x*SceneViewport.width)*VirtualWidth,(1-p.y)*VirtualHeight));
+                visible.Add(node);anchors.Add(new Vector2(map.x+p.x*map.width,map.y+(1-p.y)*map.height));
                 outside.Add(p.x<0 || p.x>1 || p.y<0 || p.y>1);
             }
-            var area=new Rect(SceneViewport.x*VirtualWidth+8,Toolbar.yMax+8,SceneViewport.width*VirtualWidth-16,Layout.footer.yMin-Toolbar.yMax-16);
+            var area=new Rect(map.x+8,map.y+8,map.width-16,map.height-16);
             var rectangles=LandmarkLabelLayout.Arrange(area,anchors);var result=new LandmarkMarker[visible.Count];
             for(int i=0;i<result.Length;i++)
             {

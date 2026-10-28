@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="16" result="Passed" total="16" passed="16" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-28 18:19:43Z" end-time="2026-10-28 18:20:01Z" duration="17,2273844">
+  <test-suite type="TestSuite" id="1030" name="Trajeto Inclusivo — Avenida Vitória" fullname="Trajeto Inclusivo — Avenida Vitória" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-10-28 18:19:43Z" end-time="2026-10-28 18:20:01Z" duration="17.227384" total="16" passed="16" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1055" name="TrajetoInclusivo.PlayModeTests.dll" fullname="E:/Jogos/Unity/Trajeto Inclusivo/Library/ScriptAssemblies/TrajetoInclusivo.PlayModeTests.dll" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-10-28 18:19:43Z" end-time="2026-10-28 18:20:01Z" duration="17.215645" total="16" passed="16" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="12296" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1056" name="TrajetoInclusivo" fullname="TrajetoInclusivo" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-10-28 18:19:43Z" end-time="2026-10-28 18:20:01Z" duration="17.214664" total="16" passed="16" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1057" name="Tests" fullname="TrajetoInclusivo.Tests" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-10-28 18:19:43Z" end-time="2026-10-28 18:20:01Z" duration="17.213942" total="16" passed="16" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1031" name="FaesaSceneTests" fullname="TrajetoInclusivo.Tests.FaesaSceneTests" classname="TrajetoInclusivo.Tests.FaesaSceneTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-28 18:19:43Z" end-time="2026-10-28 18:19:48Z" duration="4.790160" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1032" name="ExpandedSceneRoutesFromPlazaAndIfesForAllScenariosAndProfiles" fullname="TrajetoInclusivo.Tests.FaesaSceneTests.ExpandedSceneRoutesFromPlazaAndIfesForAllScenariosAndProfiles" methodname="ExpandedSceneRoutesFromPlazaAndIfesForAllScenariosAndProfiles" classname="TrajetoInclusivo.Tests.FaesaSceneTests" runstate="Runnable" seed="216770578" result="Passed" start-time="2026-10-28 18:19:43Z" end-time="2026-10-28 18:19:48Z" duration="4.776631" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1033" name="GeographicSceneTests" fullname="TrajetoInclusivo.Tests.GeographicSceneTests" classname="TrajetoInclusivo.Tests.GeographicSceneTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-28 18:19:48Z" end-time="2026-10-28 18:19:50Z" duration="1.405821" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1034" name="ImportedMapStartsUnknownAndSyntheticScenariosReroute" fullname="TrajetoInclusivo.Tests.GeographicSceneTests.ImportedMapStartsUnknownAndSyntheticScenariosReroute" methodname="ImportedMapStartsUnknownAndSyntheticScenariosReroute" classname="TrajetoInclusivo.Tests.GeographicSceneTests" runstate="Runnable" seed="746788721" result="Passed" start-time="2026-10-28 18:19:48Z" end-time="2026-10-28 18:19:50Z" duration="1.404745" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1035" name="InterfaceValidationTests" fullname="TrajetoInclusivo.Tests.InterfaceValidationTests" classname="TrajetoInclusivo.Tests.InterfaceValidationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-28 18:19:50Z" end-time="2026-10-28 18:19:51Z" duration="1.860698" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1038" name="EndpointPickingCancellationIssueFocusAndCacheInvalidation" fullname="TrajetoInclusivo.Tests.InterfaceValidationTests.EndpointPickingCancellationIssueFocusAndCacheInvalidation" methodname="EndpointPickingCancellationIssueFocusAndCacheInvalidation" classname="TrajetoInclusivo.Tests.InterfaceValidationTests" runstate="Runnable" seed="2050914735" result="Passed" start-time="2026-10-28 18:19:50Z" end-time="2026-10-28 18:19:50Z" duration="0.101172" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1037" name="GeographicMatrixAllScenariosAndProfiles" fullname="TrajetoInclusivo.Tests.InterfaceValidationTests.GeographicMatrixAllScenariosAndProfiles" methodname="GeographicMatrixAllScenariosAndProfiles" classname="TrajetoInclusivo.Tests.InterfaceValidationTests" runstate="Runnable" seed="1805821772" result="Passed" start-time="2026-10-28 18:19:50Z" end-time="2026-10-28 18:19:51Z" duration="1.625655" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1036" name="SyntheticMatrixAllScenariosAndProfiles" fullname="TrajetoInclusivo.Tests.InterfaceValidationTests.SyntheticMatrixAllScenariosAndProfiles" methodname="SyntheticMatrixAllScenariosAndProfiles" classname="TrajetoInclusivo.Tests.InterfaceValidationTests" runstate="Runnable" seed="2041654720" result="Passed" start-time="2026-10-28 18:19:51Z" end-time="2026-10-28 18:19:51Z" duration="0.132590" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1039" name="LandmarkNavigationSceneTests" fullname="TrajetoInclusivo.Tests.LandmarkNavigationSceneTests" classname="TrajetoInclusivo.Tests.LandmarkNavigationSceneTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-28 18:19:51Z" end-time="2026-10-28 18:19:53Z" duration="1.750631" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1040" name="LandmarkFocusAndQuickRoutesPreserveEndpointsAndAssessment" fullname="TrajetoInclusivo.Tests.LandmarkNavigationSceneTests.LandmarkFocusAndQuickRoutesPreserveEndpointsAndAssessment" methodname="LandmarkFocusAndQuickRoutesPreserveEndpointsAndAssessment" classname="TrajetoInclusivo.Tests.LandmarkNavigationSceneTests" runstate="Runnable" seed="603266820" result="Passed" start-time="2026-10-28 18:19:51Z" end-time="2026-10-28 18:19:53Z" duration="1.749561" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1041" name="NodeInspectionTests" fullname="TrajetoInclusivo.Tests.NodeInspectionTests" classname="TrajetoInclusivo.Tests.NodeInspectionTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-28 18:19:53Z" end-time="2026-10-28 18:19:58Z" duration="4.951143" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1042" name="ClickInspectsWithoutEditingAndEndpointPickingKeepsPriority" fullname="TrajetoInclusivo.Tests.NodeInspectionTests.ClickInspectsWithoutEditingAndEndpointPickingKeepsPriority" methodname="ClickInspectsWithoutEditingAndEndpointPickingKeepsPriority" classname="TrajetoInclusivo.Tests.NodeInspectionTests" runstate="Runnable" seed="1781503526" result="Passed" start-time="2026-10-28 18:19:53Z" end-time="2026-10-28 18:19:53Z" duration="0.148977" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1044" name="GeographicNodeInspectionPreservesUnverifiedAssessmentAndRejectsForeignNodes" fullname="TrajetoInclusivo.Tests.NodeInspectionTests.GeographicNodeInspectionPreservesUnverifiedAssessmentAndRejectsForeignNodes" methodname="GeographicNodeInspectionPreservesUnverifiedAssessmentAndRejectsForeignNodes" classname="TrajetoInclusivo.Tests.NodeInspectionTests" runstate="Runnable" seed="937780632" result="Passed" start-time="2026-10-28 18:19:53Z" end-time="2026-10-28 18:19:55Z" duration="1.729484" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1043" name="ScenarioLocatorDistinguishesNodeElevationFromSegmentObstacles" fullname="TrajetoInclusivo.Tests.NodeInspectionTests.ScenarioLocatorDistinguishesNodeElevationFromSegmentObstacles" methodname="ScenarioLocatorDistinguishesNodeElevationFromSegmentObstacles" classname="TrajetoInclusivo.Tests.NodeInspectionTests" runstate="Runnable" seed="1804555668" result="Passed" start-time="2026-10-28 18:19:55Z" end-time="2026-10-28 18:19:58Z" duration="3.071359" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1045" name="PlaybackSpeedTests" fullname="TrajetoInclusivo.Tests.PlaybackSpeedTests" classname="TrajetoInclusivo.Tests.PlaybackSpeedTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-28 18:19:58Z" end-time="2026-10-28 18:19:58Z" duration="0.257377" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1046" name="ChangingSpeedDuringPlaybackPreservesRouteAndAppliesMultiplier" fullname="TrajetoInclusivo.Tests.PlaybackSpeedTests.ChangingSpeedDuringPlaybackPreservesRouteAndAppliesMultiplier" methodname="ChangingSpeedDuringPlaybackPreservesRouteAndAppliesMultiplier" classname="TrajetoInclusivo.Tests.PlaybackSpeedTests" runstate="Runnable" seed="516059868" result="Passed" start-time="2026-10-28 18:19:58Z" end-time="2026-10-28 18:19:58Z" duration="0.123944" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1048" name="FastPlaybackFinishesExactlyAtDestination" fullname="TrajetoInclusivo.Tests.PlaybackSpeedTests.FastPlaybackFinishesExactlyAtDestination" methodname="FastPlaybackFinishesExactlyAtDestination" classname="TrajetoInclusivo.Tests.PlaybackSpeedTests" runstate="Runnable" seed="614688365" result="Passed" start-time="2026-10-28 18:19:58Z" end-time="2026-10-28 18:19:58Z" duration="0.063360" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1047" name="SelectedSpeedSurvivesStopRestartAndRerouting" fullname="TrajetoInclusivo.Tests.PlaybackSpeedTests.SelectedSpeedSurvivesStopRestartAndRerouting" methodname="SelectedSpeedSurvivesStopRestartAndRerouting" classname="TrajetoInclusivo.Tests.PlaybackSpeedTests" runstate="Runnable" seed="620360426" result="Passed" start-time="2026-10-28 18:19:58Z" end-time="2026-10-28 18:19:58Z" duration="0.068709" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1049" name="TestbedSmokeTests" fullname="TrajetoInclusivo.Tests.TestbedSmokeTests" classname="TrajetoInclusivo.Tests.TestbedSmokeTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-28 18:19:58Z" end-time="2026-10-28 18:19:59Z" duration="0.289312" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1050" name="FiveScenariosRunAndRerouteInTheActualScene" fullname="TrajetoInclusivo.Tests.TestbedSmokeTests.FiveScenariosRunAndRerouteInTheActualScene" methodname="FiveScenariosRunAndRerouteInTheActualScene" classname="TrajetoInclusivo.Tests.TestbedSmokeTests" runstate="Runnable" seed="84408102" result="Passed" start-time="2026-10-28 18:19:58Z" end-time="2026-10-28 18:19:59Z" duration="0.287952" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1051" name="WorldEditingTests" fullname="TrajetoInclusivo.Tests.WorldEditingTests" classname="TrajetoInclusivo.Tests.WorldEditingTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-28 18:19:59Z" end-time="2026-10-28 18:20:01Z" duration="1.906559" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1052" name="EditsRerouteUndoRedoAndPersistWithPhysicalGeometry" fullname="TrajetoInclusivo.Tests.WorldEditingTests.EditsRerouteUndoRedoAndPersistWithPhysicalGeometry" methodname="EditsRerouteUndoRedoAndPersistWithPhysicalGeometry" classname="TrajetoInclusivo.Tests.WorldEditingTests" runstate="Runnable" seed="734893396" result="Passed" start-time="2026-10-28 18:19:59Z" end-time="2026-10-28 18:19:59Z" duration="0.116576" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1053" name="ElevationSurvivesScenariosSaveLoadAndUndoWithoutClaimingSurveyedData" fullname="TrajetoInclusivo.Tests.WorldEditingTests.ElevationSurvivesScenariosSaveLoadAndUndoWithoutClaimingSurveyedData" methodname="ElevationSurvivesScenariosSaveLoadAndUndoWithoutClaimingSurveyedData" classname="TrajetoInclusivo.Tests.WorldEditingTests" runstate="Runnable" seed="266821038" result="Passed" start-time="2026-10-28 18:19:59Z" end-time="2026-10-28 18:20:00Z" duration="1.678306" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1054" name="RampEditsSharedNodesAndCanBeReversed" fullname="TrajetoInclusivo.Tests.WorldEditingTests.RampEditsSharedNodesAndCanBeReversed" methodname="RampEditsSharedNodesAndCanBeReversed" classname="TrajetoInclusivo.Tests.WorldEditingTests" runstate="Runnable" seed="218330218" result="Passed" start-time="2026-10-28 18:20:00Z" end-time="2026-10-28 18:20:01Z" duration="0.110311" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/Miguel/AppData/LocalLow/Trajeto Inclusivo/Trajeto Inclusivo — Avenida Vitória\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

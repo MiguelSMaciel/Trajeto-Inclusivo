@@ -56,7 +56,7 @@ namespace TrajetoInclusivo
         public bool IsPointerOverUI(Vector2 screenPosition)
         {
             Vector2 p = new Vector2(screenPosition.x, Screen.height-screenPosition.y) / UIScale;
-            if(LeftPanel.Contains(p) || DetailPanel.Contains(p) || Toolbar.Contains(p) || (simulation.geographicContext!=null && Layout.footer.Contains(p)))return true;
+            if(!Layout.map.Contains(p))return true;
             return GetLandmarkMarkers().Any(marker=>marker.rect.Contains(p));
         }
         private void Update()
@@ -78,6 +78,7 @@ namespace TrajetoInclusivo
         private void OnGUI()
         {
             Styles(); GUI.matrix = Matrix4x4.Scale(Vector3.one * UIScale);
+            DrawViewportSurround();
             if(clearFocus){GUI.FocusControl(null);TextInputFocused=false;clearFocus=false;}
             DrawPanel(LeftPanel);
             GUILayout.BeginArea(LeftPanel, box);
@@ -230,6 +231,15 @@ namespace TrajetoInclusivo
             switch (r) { case AccessibilityRating.Accessible: return "Acessível no modelo"; case AccessibilityRating.Difficult: return "Acessível com dificuldade"; case AccessibilityRating.Inaccessible: return "Inacessível para este perfil"; default: return "Não avaliado"; }
         }
         private static void Gap() => GUILayout.Space(16);
+        private void DrawViewportSurround()
+        {
+            var area=Layout.map;var oldColor=GUI.color;GUI.color=new Color(.025f,.035f,.045f,1);
+            GUI.DrawTexture(new Rect(0,0,VirtualWidth,area.yMin),Texture2D.whiteTexture);
+            GUI.DrawTexture(new Rect(0,area.yMax,VirtualWidth,VirtualHeight-area.yMax),Texture2D.whiteTexture);
+            GUI.DrawTexture(new Rect(0,area.yMin,area.xMin,area.height),Texture2D.whiteTexture);
+            GUI.DrawTexture(new Rect(area.xMax,area.yMin,VirtualWidth-area.xMax,area.height),Texture2D.whiteTexture);
+            GUI.color=oldColor;
+        }
         private static void DrawPanel(Rect rect)
         { GUI.color = new Color(.055f, .085f, .12f, 1); GUI.DrawTexture(rect, Texture2D.whiteTexture); GUI.color = Color.white; }
     }

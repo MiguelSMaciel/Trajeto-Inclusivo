@@ -31,6 +31,7 @@ namespace TrajetoInclusivo.Editor
             }
             finally{AssetDatabase.StopAssetEditing();}
             PlayerSettings.productName="Trajeto Inclusivo — Avenida Vitória";
+            PlayerSettings.resizableWindow=true;
             PlayerSettings.SetScriptingBackend(NamedBuildTarget.Standalone,ScriptingImplementation.Mono2x);
             if(linux)
             {

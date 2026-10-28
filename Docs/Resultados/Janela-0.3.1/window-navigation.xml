@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-28 18:23:09Z" end-time="2026-10-28 18:23:12Z" duration="2,4962896">
+  <test-suite type="TestSuite" id="1030" name="Trajeto Inclusivo — Avenida Vitória" fullname="Trajeto Inclusivo — Avenida Vitória" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-10-28 18:23:09Z" end-time="2026-10-28 18:23:12Z" duration="2.496290" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1055" name="TrajetoInclusivo.PlayModeTests.dll" fullname="E:/Jogos/Unity/Trajeto Inclusivo/Library/ScriptAssemblies/TrajetoInclusivo.PlayModeTests.dll" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-10-28 18:23:09Z" end-time="2026-10-28 18:23:12Z" duration="2.486482" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="18504" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1056" name="TrajetoInclusivo" fullname="TrajetoInclusivo" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-10-28 18:23:09Z" end-time="2026-10-28 18:23:12Z" duration="2.485434" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1057" name="Tests" fullname="TrajetoInclusivo.Tests" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-10-28 18:23:09Z" end-time="2026-10-28 18:23:12Z" duration="2.484617" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1039" name="LandmarkNavigationSceneTests" fullname="TrajetoInclusivo.Tests.LandmarkNavigationSceneTests" classname="TrajetoInclusivo.Tests.LandmarkNavigationSceneTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-28 18:23:09Z" end-time="2026-10-28 18:23:12Z" duration="2.481989" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1040" name="LandmarkFocusAndQuickRoutesPreserveEndpointsAndAssessment" fullname="TrajetoInclusivo.Tests.LandmarkNavigationSceneTests.LandmarkFocusAndQuickRoutesPreserveEndpointsAndAssessment" methodname="LandmarkFocusAndQuickRoutesPreserveEndpointsAndAssessment" classname="TrajetoInclusivo.Tests.LandmarkNavigationSceneTests" runstate="Runnable" seed="1489053271" result="Passed" start-time="2026-10-28 18:23:09Z" end-time="2026-10-28 18:23:12Z" duration="2.468995" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/Miguel/AppData/LocalLow/Trajeto Inclusivo/Trajeto Inclusivo — Avenida Vitória\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

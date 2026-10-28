@@ -138,6 +138,7 @@ namespace TrajetoInclusivo.Editor
             PlayerSettings.companyName = "Trajeto Inclusivo"; PlayerSettings.productName = "Trajeto Inclusivo — Testbed Sintético";
             PlayerSettings.defaultScreenWidth = 1600; PlayerSettings.defaultScreenHeight = 1000;
             PlayerSettings.fullScreenMode = FullScreenMode.Windowed;
+            PlayerSettings.resizableWindow = true;
             AssetDatabase.SaveAssets(); AssetDatabase.Refresh();
             Debug.Log("TRAJETO_SETUP_OK: " + ScenePath);
         }
