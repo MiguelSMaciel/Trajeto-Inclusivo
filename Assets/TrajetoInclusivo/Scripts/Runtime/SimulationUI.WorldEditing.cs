@@ -55,7 +55,8 @@ namespace TrajetoInclusivo
             if(selectedObstacle!=null && selectedObstacle.segment!=s)selectedObstacle=null;
             if(draftSegment!=s || draftObstacle!=selectedObstacle || draftRevision!=editor.Revision)ReadDraft(s);
             DrawPanel(DetailPanel);GUILayout.BeginArea(DetailPanel,box);detailScroll=GUILayout.BeginScrollView(detailScroll);
-            GUILayout.BeginHorizontal();GUILayout.Label("Editar ambiente",heading);if(GUILayout.Button("×",button,GUILayout.Width(32)))simulation.selectedSegment=null;GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();GUILayout.Label("Editar ambiente",heading);bool close=GUILayout.Button("×",button,GUILayout.Width(32));GUILayout.EndHorizontal();
+            if(close){CloseInspection();GUILayout.EndScrollView();GUILayout.EndArea();return;}
             GUILayout.Label(s.displayName,body);GUILayout.Label(s.id,small);
             if(!string.IsNullOrEmpty(s.sourceFeatureId))GUILayout.Label(s.sourceFeatureId+"\n"+s.geometryProvenance,small);
             var evaluation=AccessibilityEvaluator.Evaluate(s,simulation.Profile,true);

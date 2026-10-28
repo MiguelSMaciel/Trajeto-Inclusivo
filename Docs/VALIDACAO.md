@@ -2,6 +2,16 @@
 
 Ambiente: Windows, Unity 6000.6.4f1, URP 17.6.0. Projeto em `E:/Jogos/Unity/Trajeto Inclusivo`.
 
+## Versão 0.3.0 — inspeção de nós — 28/10/2026
+
+**75 testes aprovados, zero falhas:** 59 EditMode e 16 PlayMode. Evidências em [Resultados/Nos-0.3.0](Resultados/Nos-0.3.0). Os três testes novos verificam seleção de nó por raycast sem alterar A/B, rota ou JSON da experiência, prioridade da escolha de A/B, atualização e remoção do destaque, passagem ao editor de um trecho, uso do nó como origem/destino, estado inicial não avaliado preservado e recusa de nós fora da rede.
+
+A localização de alterações é exercitada nas três cenas: o cenário de rampa abre o nó elevado e o de degrau abre o trecho com obstáculo. Os mapas geográficos agora criam uma esfera clicável para o ponto GeoRamp, que antes só existia na estrutura da rede. Não houve regeneração das cenas ou mudança no grafo de roteamento.
+
+**Windows 0.3.0 aprovado:** a rotina do executável passou em 60/60 combinações e confirmou inspeção de nós, preservação da experiência ao consultar, localização de alterações, uso como A/B e fechamento nas três cenas. Registrou `Runtime errors: 0` e `TRAJETO_STAGE4_OK`. A interface foi conferida em 1600×1000 e 1024×768. Relatórios e capturas em `Resultados/Nos-0.3.0/Windows`. A rotina aciona os mesmos métodos públicos e raycasts da interface; não simula cliques físicos do mouse na janela.
+
+O pacote Linux usa os mesmos fontes e possui uma validação nativa própria pelo workflow. Os resultados dessa execução são acrescentados ao repositório depois da publicação do pacote; consulte esta página online e a aba Actions para as evidências mais recentes. A validação continua computacional, sem avaliação de campo ou ensaio de usabilidade com participantes.
+
 ## Versão 0.2.0 — velocidade de reprodução — 28/10/2026
 
 **72 testes aprovados, zero falhas:** 59 EditMode e 13 PlayMode. Os XMLs estão em [Resultados/Velocidade-0.2.0](Resultados/Velocidade-0.2.0). Três novos testes integrados conferem os fatores 0,5×/1×/1,5×/2×/4×/8× durante o movimento, posição contínua ao mudar a velocidade, rota calculada preservada, manutenção ao parar/reiniciar/recalcular e chegada exata ao destino em alta velocidade. O tempo global permanece inalterado.

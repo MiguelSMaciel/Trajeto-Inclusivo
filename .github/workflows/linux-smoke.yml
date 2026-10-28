@@ -6,7 +6,7 @@ on:
       release_tag:
         description: Versão publicada que será validada
         required: true
-        default: v0.2.0
+        default: v0.3.0
         type: string
 
 permissions:

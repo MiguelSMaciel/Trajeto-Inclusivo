@@ -2,9 +2,11 @@
 
 **Manual de uso e apresentação:** [leia o manual completo](Docs/MANUAL_DE_USO.md), com telas explicadas, exercícios guiados e roteiro de demonstração de 12 minutos. Baixe o [PDF ilustrado](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/Manual_Trajeto_Inclusivo_0.2.0.pdf) ou o [Word editável](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/Manual_Trajeto_Inclusivo_0.2.0.docx). O manual tem 25 páginas; as páginas 20 a 22 ajudam a ensaiar a apresentação.
 
-**Novo na 0.2.0:** a barra superior permite mudar a velocidade do acompanhamento para **0,5×, 1×, 1,5×, 2×, 4× e 8×**, sem reiniciar o percurso.
+**Novo na 0.3.0:** clique numa **bolinha azul** para abrir **Conhecer o nó**, com nome, identificador, papel como A/B, cota, fonte e trechos conectados. Um anel amarelo marca o nó selecionado. **Localizar alteração do cenário** aproxima o nó elevado ou o trecho com obstáculo. Veja o [guia ilustrado de inspeção de nós](Docs/INSPECAO_DE_NOS.md), complemento do manual base da versão 0.2.0.
 
-**Windows x86_64:** baixe `TrajetoInclusivo-Windows-x86_64.zip` na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/tag/v0.2.0), extraia toda a pasta e execute `TrajetoInclusivo.exe`. O ZIP inclui as três cenas, os dados e a documentação; mantenha as DLLs e pastas junto do executável. O checksum separado está em `SHA256SUMS-Windows.txt`.
+A barra superior permite mudar a velocidade do acompanhamento para **0,5×, 1×, 1,5×, 2×, 4× e 8×**, sem reiniciar o percurso.
+
+**Windows x86_64:** baixe `TrajetoInclusivo-Windows-x86_64.zip` na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/tag/v0.3.0), extraia toda a pasta e execute `TrajetoInclusivo.exe`. O ZIP inclui as três cenas, os dados e a documentação; mantenha as DLLs e pastas junto do executável. O checksum separado está em `SHA256SUMS-Windows.txt`.
 
 **Linux x86_64:** há um port nativo com as três cenas e toda a documentação. Consulte [LINUX.md](Docs/LINUX.md) para executar, compilar e validar. Os pacotes ficam na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases); o repositório contém os fontes, assets e documentação, sem os caches do Unity.
 
@@ -42,7 +44,7 @@ Também é possível gerar um programa local com **Trajeto Inclusivo → Gerar e
 
 - **Condição artificial:** alterne os cinco cenários no painel esquerdo. Eles são assets editáveis, sem necessidade de mudar código.
 - **Perfis:** pedestre, cadeira manual e cadeira motorizada. “Consultar limites dos perfis” abre a aba **Três perfis**, com capacidades, resultado de cada hipótese e botão para selecioná-la. Os parâmetros são hipóteses de teste.
-- **A / B:** clique em “Escolher A” ou “Escolher B”, depois em uma esfera azul do grafo. “Inverter” troca o sentido; “Cancelar seleção” ou Esc cancela. A=B produz um percurso de distância zero.
+- **Nós e A / B:** um clique comum numa esfera azul abre suas informações sem mudar a rota. No painel **Conhecer o nó**, **Usar como A/B** define o ponto como origem/destino. Também é possível clicar em “Escolher A” ou “Escolher B” e depois numa esfera. “Inverter” troca o sentido; “Cancelar seleção” ou Esc cancela. A=B produz um percurso de distância zero. Esc ou `×` fecha a inspeção.
 - **Comparação:** a tabela do painel direito mostra as duas rotas lado a lado: distância, subida/descida acumuladas, inclinações direcionais e transversal, menor faixa livre, obstáculos e custo ponderado acessível. Exibe desvio em metros/porcentagem e justificativa por barreira, dados ausentes ou custo. Clique nos trechos problemáticos listados para abrir e focar sua geometria. A rota selecionada fica mais espessa.
 - **Inspeção:** clique no pavimento ou em um obstáculo. Ajuste cotas/rampa, largura, inclinação transversal, irregularidade e ondulação física; clique em **Aplicar** para confirmar. Adicione ou remova poste, árvore, lixeira, mobiliário, objeto, degrau, buraco ou obras. Cada obstáculo tem área ocupada, posição lateral/longitudinal, altura/profundidade e contorno. Buracos escavam o pavimento e seu collider. Feche o painel no `×` para voltar à comparação.
 - **Histórico e persistência:** a barra central permite desfazer/refazer até 12 comandos e salvar/carregar uma experiência JSON na pasta de dados do aplicativo. A mensagem mostra o caminho. Inclui obstáculos, geometria, grade, estado de avaliação, A/B e perfil.

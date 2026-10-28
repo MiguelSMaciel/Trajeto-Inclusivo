@@ -2,6 +2,8 @@
 
 O port usa Unity **6000.6.4f1**, backend Mono e URP 17.6.0. Inclui as três cenas, começando pela expansão Praça–Ifes–FAESA, os mesmos perfis, editor físico, histórico, persistência e dados cartográficos locais.
 
+Na versão 0.3.0, clique numa bolinha azul para abrir **Conhecer o nó**. O [guia de inspeção de nós](INSPECAO_DE_NOS.md) explica o painel e o comando **Localizar alteração do cenário**. O comportamento é o mesmo do Windows.
+
 **Validado em Ubuntu 22.04.5:** 60/60 combinações aprovadas, com renderização gráfica via Xvfb/Mesa. Consulte [os resultados e limites](VALIDACAO.md) e a [captura da aproximação da FAESA](Resultados/Linux/Navigation-FAESA-Closeup.png).
 
 ## Executar o pacote

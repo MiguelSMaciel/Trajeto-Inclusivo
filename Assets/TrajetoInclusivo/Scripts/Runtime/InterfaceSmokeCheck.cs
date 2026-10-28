@@ -102,6 +102,22 @@ namespace TrajetoInclusivo
                     playback.Stop();playback.SetPlaybackSpeedIndex(1);
                     passed &= speedOk;report.AppendLine("Playback 0.5x / 1x / 1.5x / 2x / 4x / 8x, continuous position, same route and global time: "+speedOk);
                 }
+                sim.scenarios.Apply(2);yield return null;yield return null;
+                var nodeOrigin=sim.origin;var nodeDestination=sim.destination;var nodeRoute=sim.conventional;var nodeWorld=sim.worldEditor.CaptureJson();
+                var scenarioDefinition=sim.scenarios.scenarios[2];var elevated=sim.graph.nodes.Find(n=>n.id==scenarioDefinition.raisedNodeId);
+                Physics.SyncTransforms();bool nodeInspection=ui.HandleMapRay(new Ray(elevated.Position+Vector3.up*5,Vector3.down));
+                nodeInspection &= ui.SelectedNode==elevated && sim.origin==nodeOrigin && sim.destination==nodeDestination && sim.conventional==nodeRoute && sim.worldEditor.CaptureJson()==nodeWorld;
+                ui.InspectScenarioChange();yield return null;yield return new WaitForEndOfFrame();
+                nodeInspection &= ui.SelectedNode==elevated && Vector3.Distance(camera.target,elevated.Position)<.001f;
+                CaptureFrame(output,"Nodes-Inspecao-"+scene,report);
+                if(sim.geographicContext!=null && sim.geographicContext.faesa!=null)
+                {ui.InspectNode(sim.geographicContext.faesa,true);yield return null;yield return new WaitForEndOfFrame();CaptureFrame(output,"Nodes-FAESA",report);}
+                ui.UseInspectedNodeAsEndpoint(true);ui.UseInspectedNodeAsEndpoint(false);yield return null;yield return null;
+                nodeInspection &= sim.accessible.Found && sim.accessible.distance==0;
+                ui.CloseInspection();nodeInspection &= ui.SelectedNode==null;
+                sim.origin=nodeOrigin;sim.destination=nodeDestination;sim.scenarios.Apply(1);yield return null;yield return null;
+                ui.InspectScenarioChange();nodeInspection &= sim.selectedSegment!=null && ui.SelectedNode==null && scenarioDefinition.raisedNodeId==elevated.id;
+                passed &= nodeInspection;report.AppendLine(scene+" node raycast, unchanged world, scenario locator, endpoints and closing: "+nodeInspection);
                 var endpoint=sim.origin;ui.BeginPicking(false);Physics.SyncTransforms();
                 bool picking=ui.HandleMapRay(new Ray(endpoint.Position+Vector3.up*5,Vector3.down));yield return null;yield return null;
                 picking &= sim.destination==endpoint && sim.accessible.Found && sim.accessible.distance==0;passed &= picking;report.AppendLine(scene+" endpoint picking / zero-length route: "+picking);
@@ -109,6 +125,7 @@ namespace TrajetoInclusivo
                 {
                     Screen.SetResolution(1024,768,FullScreenMode.Windowed);ui.ShowProfileComparison(false);yield return null;yield return null;
                     yield return new WaitForEndOfFrame();CaptureFrame(output,"Stage4-1024x768",report);
+                    ui.InspectNode(elevated,true);yield return null;yield return new WaitForEndOfFrame();CaptureFrame(output,"Nodes-1024x768",report);
                 }
             }
             passed &= errors==0;report.AppendLine("Runtime errors: "+errors);report.AppendLine(passed?"TRAJETO_STAGE4_OK":"TRAJETO_STAGE4_FAILED");

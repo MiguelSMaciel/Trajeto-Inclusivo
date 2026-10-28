@@ -9,6 +9,29 @@ namespace TrajetoInclusivo
         private readonly Dictionary<string, LineRenderer> lines = new Dictionary<string, LineRenderer>();
         private Mesh networkMesh;
         private MeshFilter networkFilter;
+        private PedestrianNode inspectedNode;
+        private LineRenderer nodeHighlight;
+        public void InspectNode(PedestrianNode node)
+        {
+            inspectedNode=node;
+            if(node!=null && nodeHighlight==null)
+            {
+                var go=new GameObject("Nó inspecionado");go.transform.SetParent(transform,false);
+                nodeHighlight=go.AddComponent<LineRenderer>();nodeHighlight.sharedMaterial=lineMaterial;
+                nodeHighlight.useWorldSpace=false;nodeHighlight.loop=true;nodeHighlight.positionCount=48;
+                nodeHighlight.startWidth=nodeHighlight.endWidth=.14f;
+                nodeHighlight.startColor=nodeHighlight.endColor=new Color(1,.77f,.12f);
+                for(int i=0;i<48;i++){float angle=i*Mathf.PI*2/48;nodeHighlight.SetPosition(i,new Vector3(Mathf.Cos(angle)*2f,.18f,Mathf.Sin(angle)*2f));}
+            }
+            UpdateNodeHighlight();
+        }
+        private void LateUpdate()=>UpdateNodeHighlight();
+        private void UpdateNodeHighlight()
+        {
+            if(nodeHighlight==null)return;
+            nodeHighlight.gameObject.SetActive(inspectedNode!=null);
+            if(inspectedNode!=null)nodeHighlight.transform.position=inspectedNode.Position;
+        }
         public static Color RatingColor(AccessibilityRating rating)
         {
             switch (rating)

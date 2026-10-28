@@ -4,6 +4,8 @@ Guia didático para demonstração e apresentação
 
 Versão do simulador 0.2.0 | 28 de outubro de 2026
 
+**Complemento para a versão 0.3.0:** agora é possível clicar numa bolinha azul para conhecer o nó e usar **Localizar alteração do cenário**. Consulte o [guia de inspeção de nós](INSPECAO_DE_NOS.md). O PDF e o Word da versão 0.2.0 mantêm a paginação original; este guia documenta a função adicionada depois da elaboração deles.
+
 O Trajeto Inclusivo é um protótipo 3D para comparar um caminho baseado em distância com um caminho que considera condições de acessibilidade. Você escolhe origem, destino e perfil de mobilidade, modifica hipóteses do ambiente e observa a resposta do modelo.
 
 Este manual ensina a executar o programa, interpretar a tela, fazer experiências e explicar os resultados ao público. A parte final oferece um roteiro de apresentação de aproximadamente 12 minutos, perguntas frequentes e uma consulta rápida.

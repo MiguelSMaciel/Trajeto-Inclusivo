@@ -24,10 +24,10 @@ namespace TrajetoInclusivo
         public bool PickingEndpoint=>picking!=0;
         private bool clearFocus;
         public void BeginPicking(bool origin)
-        {picking=origin?1:2;simulation.selectedSegment=null;inspection.Stop();clearFocus=true;}
+        {CloseInspection();picking=origin?1:2;inspection.Stop();clearFocus=true;}
         public void CancelPicking(){picking=0;clearFocus=true;}
         public void InspectSegment(AccessibilitySegment segment,bool focus=true)
-        {picking=0;selectedObstacle=null;simulation.selectedSegment=segment;detailScroll=Vector2.zero;clearFocus=true;if(focus){inspection.Stop();cameraController.FrameSegment(segment);}}
+        {CloseInspection();picking=0;simulation.selectedSegment=segment;detailScroll=Vector2.zero;clearFocus=true;if(focus){inspection.Stop();cameraController.FrameSegment(segment);}}
         public bool HandleMapRay(Ray ray)
         {
             if(!Physics.Raycast(ray,out var hit,10000))return false;
@@ -38,6 +38,7 @@ namespace TrajetoInclusivo
                 if(picking==1)simulation.origin=node;else simulation.destination=node;
                 CancelPicking();simulation.RequestRecalculation();return true;
             }
+            if(node!=null && simulation.graph.nodes.Contains(node)){InspectNode(node);return true;}
             var obstacle=hit.collider.GetComponentInParent<AccessibilityObstacle>();
             var segment=obstacle!=null?obstacle.segment:hit.collider.GetComponentInParent<AccessibilitySegment>();
             if(obstacle==null && segment!=null)
@@ -46,6 +47,7 @@ namespace TrajetoInclusivo
                 obstacle=segment.obstacles.FirstOrDefault(o=>o!=null && o.isActiveAndEnabled && o.kind==ObstacleKind.Pothole && ObstacleFootprints.Bounds(o).Contains(local));
             }
             if(segment==null)return false;
+            SetInspectedNode(null);
             if(simulation.selectedSegment!=segment)detailScroll=Vector2.zero;
             simulation.selectedSegment=segment;selectedObstacle=obstacle;return true;
         }
@@ -59,7 +61,7 @@ namespace TrajetoInclusivo
         }
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Escape)){CancelPicking();simulation.selectedSegment=null;selectedObstacle=null;}
+            if(Input.GetKeyDown(KeyCode.Escape)){CancelPicking();CloseInspection();}
             if (!Input.GetMouseButtonDown(0) || ContainsPointer()) return;
             clearFocus=true;HandleMapRay(cameraController.view.ScreenPointToRay(Input.mousePosition));
         }
@@ -111,6 +113,7 @@ namespace TrajetoInclusivo
                 selectedObstacle = null; inspection.Stop(); simulation.worldEditor.Edit("Cenário alterado",()=>scenarios.Apply(scenario));
             }
             GUILayout.Label(scenarios.scenarios[scenarios.currentIndex].description, small);
+            if(HasScenarioInspectionTarget && GUILayout.Button("Localizar alteração do cenário",button))InspectScenarioChange();
             Gap(); GUILayout.Label("02  PERFIL DE MOBILIDADE", small);
             int profile = GUILayout.SelectionGrid(simulation.profileIndex, simulation.profiles.Select(p => p.displayName).ToArray(), 1, button);
             if (profile != simulation.profileIndex) simulation.SetProfile(profile);
@@ -153,9 +156,9 @@ namespace TrajetoInclusivo
             if (GUILayout.Button(inspection.Running ? "Parar inspeção" : "Acompanhar rota acessível", button))
             { if (inspection.Running) inspection.Stop(); else inspection.Begin(); }
             GUI.enabled = true;
-            GUILayout.Label("WASD: deslocar • Q/E: altura • botão direito: orbitar\nRoda: zoom • T: vista • Home: enquadrar\nClique na calçada ou no obstáculo para inspecionar.", small);
+            GUILayout.Label("WASD: deslocar • Q/E: altura • botão direito: orbitar\nRoda: zoom • T: vista • Home: enquadrar\nClique numa bolinha azul para conhecer o nó; na calçada ou no obstáculo para editar.", small);
             GUILayout.EndScrollView(); GUILayout.EndArea();
-            if (simulation.selectedSegment != null) DrawInspector(); else DrawComparison();
+            if (simulation.selectedSegment != null) DrawInspector(); else if(SelectedNode!=null)DrawNodeInspector();else DrawComparison();
             DrawWorldToolbar();
             DrawLandmarkMarkers();
             if (geo != null)
@@ -186,7 +189,7 @@ namespace TrajetoInclusivo
             RouteCard("CONVENCIONAL · LINHA AZUL",comparison.conventional,false);
             Gap(); RouteCard("ACESSÍVEL · LINHA VERDE/AMARELA",comparison.accessible,true);
             Gap();if(GUILayout.Button("Comparar os três perfis",button))ShowProfileComparison(true);
-            Gap(); GUILayout.Label("Clique em uma calçada para abrir as propriedades e editar os obstáculos.", body);
+            Gap(); GUILayout.Label("Clique numa bolinha azul para conhecer o nó ou numa calçada para editar o ambiente.", body);
             GUILayout.EndScrollView(); GUILayout.EndArea();
         }
         private void RouteCard(string title, RouteAnalysis analysis,bool accessible)
@@ -213,7 +216,7 @@ namespace TrajetoInclusivo
         public void SetFaesaRoute(bool fromIfes)
         {
             var context=simulation.geographicContext;if(context==null || context.faesa==null)return;
-            CancelPicking();inspection.Stop();simulation.selectedSegment=null;
+            CancelPicking();inspection.Stop();CloseInspection();
             simulation.origin=fromIfes?context.ifes:context.plaza;simulation.destination=context.faesa;simulation.RequestRecalculation();
             frameNextRoute=true;
         }

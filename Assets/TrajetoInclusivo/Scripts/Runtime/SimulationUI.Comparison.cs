@@ -8,7 +8,7 @@ namespace TrajetoInclusivo
         private RouteComparison profileCacheSource;
         private RouteComparison[] profileComparisons;
         public void ShowProfileComparison(bool show)
-        {showProfiles=show;detailScroll=Vector2.zero;simulation.selectedSegment=null;}
+        {showProfiles=show;detailScroll=Vector2.zero;CloseInspection();}
         public RouteComparison[] GetProfileComparisons()
         {
             if(profileCacheSource==simulation.comparison && profileComparisons!=null)return profileComparisons;

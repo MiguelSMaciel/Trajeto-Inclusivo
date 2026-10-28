@@ -1,0 +1,31 @@
+AvenidaVitoria_FAESA initial unknown: True
+Stage4-NaoAvaliado-AvenidaVitoria_FAESA: captured framebuffer with IMGUI
+FAESA landmark focus without changing endpoints: True
+Navigation-FAESA-Closeup: captured framebuffer with IMGUI
+Stage4-Comparacao-AvenidaVitoria_FAESA: captured framebuffer with IMGUI
+Stage4-Perfis-AvenidaVitoria_FAESA: captured framebuffer with IMGUI
+Stage4-Inspecao-AvenidaVitoria_FAESA: captured framebuffer with IMGUI
+Nodes-Inspecao-AvenidaVitoria_FAESA: captured framebuffer with IMGUI
+Nodes-FAESA: captured framebuffer with IMGUI
+AvenidaVitoria_FAESA node raycast, unchanged world, scenario locator, endpoints and closing: True
+AvenidaVitoria_FAESA endpoint picking / zero-length route: True
+AvenidaVitoria_Geografico initial unknown: True
+Stage4-NaoAvaliado-AvenidaVitoria_Geografico: captured framebuffer with IMGUI
+Stage4-Comparacao-AvenidaVitoria_Geografico: captured framebuffer with IMGUI
+Stage4-Perfis-AvenidaVitoria_Geografico: captured framebuffer with IMGUI
+Stage4-Inspecao-AvenidaVitoria_Geografico: captured framebuffer with IMGUI
+Nodes-Inspecao-AvenidaVitoria_Geografico: captured framebuffer with IMGUI
+AvenidaVitoria_Geografico node raycast, unchanged world, scenario locator, endpoints and closing: True
+AvenidaVitoria_Geografico endpoint picking / zero-length route: True
+Stage4-Comparacao-AvenidaVitoria_Testbed: captured framebuffer with IMGUI
+Stage4-Perfis-AvenidaVitoria_Testbed: captured framebuffer with IMGUI
+Stage4-Inspecao-AvenidaVitoria_Testbed: captured framebuffer with IMGUI
+Playback-8x: captured framebuffer with IMGUI
+Playback 0.5x / 1x / 1.5x / 2x / 4x / 8x, continuous position, same route and global time: True
+Nodes-Inspecao-AvenidaVitoria_Testbed: captured framebuffer with IMGUI
+AvenidaVitoria_Testbed node raycast, unchanged world, scenario locator, endpoints and closing: True
+AvenidaVitoria_Testbed endpoint picking / zero-length route: True
+Stage4-1024x768: captured framebuffer with IMGUI
+Nodes-1024x768: captured framebuffer with IMGUI
+Runtime errors: 0
+TRAJETO_STAGE4_OK

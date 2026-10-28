@@ -22,6 +22,7 @@ namespace TrajetoInclusivo
         private bool? worldLabelsVisible;
         private void Start()
         {
+            EnsureScenarioNodeHandles();
             simulation.RoutesChanged+=HandleNavigationRouteChanged;
             if(simulation.geographicContext!=null)
                 foreach(var text in simulation.GetComponentsInChildren<TextMesh>())
@@ -99,7 +100,7 @@ namespace TrajetoInclusivo
                 GUI.matrix=matrix*Matrix4x4.TRS(new Vector3(marker.anchor.x,marker.anchor.y,0),Quaternion.Euler(0,0,Mathf.Atan2(delta.y,delta.x)*Mathf.Rad2Deg),Vector3.one);
                 GUI.DrawTexture(new Rect(0,0,delta.magnitude,1.5f),Texture2D.whiteTexture);GUI.matrix=matrix;GUI.color=Color.white;
                 DrawPanel(marker.rect);
-                if(GUI.Button(marker.rect,new GUIContent(marker.label,marker.node.displayName+" · Clique para aproximar."),landmarkButton))FocusLandmark(marker.node);
+                if(GUI.Button(marker.rect,new GUIContent(marker.label,marker.node.displayName+" · Clique para conhecer o nó e aproximar."),landmarkButton))InspectNode(marker.node,true);
             }
         }
     }
