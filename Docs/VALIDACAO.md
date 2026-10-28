@@ -8,7 +8,9 @@ Ambiente: Windows, Unity 6000.6.4f1, URP 17.6.0. Projeto em `E:/Jogos/Unity/Traj
 
 **Windows 0.3.1 aprovado:** 60/60 combinações da matriz, inspeção nas três cenas, seis fatores de reprodução e zero erros de execução. A rotina alterou a janela para 1600×1000, 1280×720, 1920×1080 e 1024×768; em cada tamanho confirmou viewport alinhado à área central, rótulos projetados corretamente, margem superior preenchida e estado da experiência preservado. As capturas foram conferidas visualmente. A leitura dos estilos da janela pelo Win32 confirmou `WS_THICKFRAME` e `WS_MAXIMIZEBOX`, permitindo redimensionamento pelas bordas e botão de maximizar. Não foi simulado um clique físico nesse botão.
 
-XMLs, relatórios e capturas estão em [Resultados/Janela-0.3.1](Resultados/Janela-0.3.1). A validação nativa Linux usa o pacote publicado, e suas evidências são acrescentadas ao repositório após o workflow.
+**Linux 0.3.1 aprovado:** o [workflow 40745406737](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/actions/runs/40745406737) verificou o pacote publicado e o manifesto de runtime em Ubuntu 22.04.5 com Xvfb/Mesa. Passou em 60/60 combinações e nos quatro tamanhos reais de janela, com viewport, rótulos, margem superior e estado da experiência corretos. A rotina registrou `Runtime errors: 0`; capturas em 1920×1080 e 1024×768 foram conferidas. Esse ambiente não usa um gerenciador de janelas de desktop, portanto não verifica seu botão nativo de maximizar.
+
+XMLs, relatórios, checksums, ambiente e capturas estão em [Resultados/Janela-0.3.1](Resultados/Janela-0.3.1). Os pacotes permanecem idênticos aos testados; as evidências Linux foram acrescentadas ao repositório após a execução do workflow.
 
 ## Versão 0.3.0 — inspeção de nós — 28/10/2026
 

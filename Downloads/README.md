@@ -14,7 +14,7 @@ Para preparar a demonstração, consulte as páginas 20 a 22 do PDF ou Word. O m
 
 ## Windows x86_64
 
-**[Clique aqui para baixar o ZIP Windows](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.3.1/TrajetoInclusivo-Windows-x86_64.zip)** — aproximadamente 55 MB.
+**[Clique aqui para baixar o ZIP Windows](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.3.1/TrajetoInclusivo-Windows-x86_64.zip)** — aproximadamente 61 MB.
 
 Extraia toda a pasta do ZIP e execute `TrajetoInclusivo.exe`. Mantenha as DLLs e as pastas junto do executável. O pacote contém as três cenas, incluindo FAESA, os dados e a documentação; não é necessário instalar o Unity Editor.
 
@@ -22,7 +22,7 @@ Extraia toda a pasta do ZIP e execute `TrajetoInclusivo.exe`. Mantenha as DLLs e
 
 ## Linux x86_64
 
-**[Clique aqui para baixar o pacote Linux](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.3.1/TrajetoInclusivo-Linux-x86_64.tar.gz)** — aproximadamente 49 MB.
+**[Clique aqui para baixar o pacote Linux](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.3.1/TrajetoInclusivo-Linux-x86_64.tar.gz)** — aproximadamente 55 MB.
 
 Extraia o pacote e execute `./TrajetoInclusivo.sh` dentro da pasta extraída. Consulte o [guia Linux](../Docs/LINUX.md).
 
