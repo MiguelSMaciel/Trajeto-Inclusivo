@@ -2,6 +2,16 @@
 
 Ambiente: Windows, Unity 6000.6.4f1, URP 17.6.0. Projeto em `E:/Jogos/Unity/Trajeto Inclusivo`.
 
+## Versão 0.3.2 — limite de FPS e áudio — 28/10/2026
+
+**16 testes PlayMode reexecutados e aprovados, zero falhas.** Incluem os multiplicadores de velocidade, continuidade da animação, inspeção de nós, edição e navegação. O ajuste define 60 FPS antes da primeira cena, sem alterar o tempo global ou o cálculo de rotas. O executável também mede intervalos reais entre quadros.
+
+**Windows 0.3.2 aprovado:** 60/60 combinações, inspeção nas três cenas, seis fatores de velocidade e quatro tamanhos de janela preservados, com `Runtime errors: 0`. Em cada cena, o player confirmou o teto solicitado de 60 FPS e VSync 0 e mediu 30 quadros por tempo não escalado. As amostras ficaram em 60,0 FPS na FAESA, 59,5 FPS no recorte original e 60,0 FPS no testbed. A checagem aceita até 20% de tolerância de temporização; não exige uma taxa mínima de renderização. Os estilos nativos da janela continuam permitindo redimensionamento e maximização.
+
+A configuração do projeto foi conferida com `m_DisableAudio: 1` e volume principal zero; o manifest permanece sem o módulo de áudio. Fontes e cenas não contêm fontes de som ou listeners. Isso não diagnostica som físico vindo do gabinete. Não houve medição acústica, de consumo elétrico ou comparação quantitativa de carga da GPU.
+
+Relatórios e XML em [Resultados/Desempenho-0.3.2](Resultados/Desempenho-0.3.2). As evidências Linux são acrescentadas ao repositório depois da execução sobre o pacote publicado.
+
 ## Versão 0.3.1 — janela e viewport — 28/10/2026
 
 **78 testes aprovados, zero falhas:** 62 EditMode e 16 PlayMode. A suíte de layout agora cobre oito proporções e tamanhos, incluindo 800×600, 1600×1000 e 2560×1080. Confere que o viewport fica abaixo da barra e acima dos créditos, com a conversão correta entre as origens de coordenadas da câmera e da interface. O teste integrado de navegação verifica que os rótulos apontam para a projeção dos nós no viewport recortado. Após ajustar o bloqueio de cliques nas margens, esse teste foi executado novamente e aprovado.

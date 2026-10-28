@@ -37,6 +37,14 @@ namespace TrajetoInclusivo
             {
                 if(SceneManager.GetActiveScene().name!=scene){yield return SceneManager.LoadSceneAsync(scene);yield return null;yield return null;}
                 var sim=FindAnyObjectByType<SimulationController>();var ui=FindAnyObjectByType<SimulationUI>();var camera=FindAnyObjectByType<CameraController>();
+                bool pacing=Application.targetFrameRate==DesktopRuntimeDefaults.TargetFrameRate && QualitySettings.vSyncCount==0;
+                passed &= pacing;
+                report.AppendLine($"{scene} frame limit={Application.targetFrameRate}, vSync={QualitySettings.vSyncCount}: {pacing}");
+                float elapsed=0;
+                for(int sample=0;sample<30;sample++){yield return null;elapsed+=Time.unscaledDeltaTime;}
+                float sampledFps=elapsed>0?30/elapsed:0;
+                bool paced=sampledFps>0 && sampledFps<=DesktopRuntimeDefaults.TargetFrameRate*1.2f;
+                passed &= paced;report.AppendLine($"{scene} sampled FPS over 30 frames={sampledFps:F1}, within configured ceiling with 20% timing tolerance: {paced}");
                 if(sim.geographicContext!=null)
                 {
                     bool unknown=sim.accessible.failure==RouteFailure.InsufficientData;passed &= unknown;report.AppendLine(scene+" initial unknown: "+unknown);

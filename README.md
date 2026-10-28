@@ -2,13 +2,15 @@
 
 **Manual de uso e apresentação:** [leia o manual completo](Docs/MANUAL_DE_USO.md), com telas explicadas, exercícios guiados e roteiro de demonstração de 12 minutos. Baixe o [PDF ilustrado](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/Manual_Trajeto_Inclusivo_0.2.0.pdf) ou o [Word editável](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/download/v0.2.0/Manual_Trajeto_Inclusivo_0.2.0.docx). O manual tem 25 páginas; as páginas 20 a 22 ajudam a ensaiar a apresentação.
 
-**Corrigido na 0.3.1:** a janela pode ser redimensionada e maximizada. O mapa ocupa a área central abaixo da barra, sem a faixa recortada no topo, e os rótulos acompanham o viewport ao mudar o tamanho. Consulte [janela e enquadramento](Docs/JANELA_E_LAYOUT.md).
+**Novo na 0.3.2:** renderização limitada a **60 FPS** para evitar carga sem limite na GPU, e sistema de áudio desativado nos executáveis. O limite pode ajudar a reduzir ruído físico sob carga; não confirma a causa de um som vindo do gabinete. Consulte [desempenho e áudio](Docs/DESEMPENHO_E_AUDIO.md).
+
+A janela pode ser redimensionada e maximizada desde a 0.3.1. O mapa ocupa a área central abaixo da barra, sem a faixa recortada no topo, e os rótulos acompanham o viewport ao mudar o tamanho. Consulte [janela e enquadramento](Docs/JANELA_E_LAYOUT.md).
 
 Desde a 0.3.0, clique numa **bolinha azul** para abrir **Conhecer o nó**, com nome, identificador, papel como A/B, cota, fonte e trechos conectados. Um anel amarelo marca o nó selecionado. **Localizar alteração do cenário** aproxima o nó elevado ou o trecho com obstáculo. Veja o [guia ilustrado de inspeção de nós](Docs/INSPECAO_DE_NOS.md), complemento do manual base da versão 0.2.0.
 
 A barra superior permite mudar a velocidade do acompanhamento para **0,5×, 1×, 1,5×, 2×, 4× e 8×**, sem reiniciar o percurso.
 
-**Windows x86_64:** baixe `TrajetoInclusivo-Windows-x86_64.zip` na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/tag/v0.3.1), extraia toda a pasta e execute `TrajetoInclusivo.exe`. O ZIP inclui as três cenas, os dados e a documentação; mantenha as DLLs e pastas junto do executável. O checksum separado está em `SHA256SUMS-Windows.txt`.
+**Windows x86_64:** baixe `TrajetoInclusivo-Windows-x86_64.zip` na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases/tag/v0.3.2), extraia toda a pasta e execute `TrajetoInclusivo.exe`. O ZIP inclui as três cenas, os dados e a documentação; mantenha as DLLs e pastas junto do executável. O checksum separado está em `SHA256SUMS-Windows.txt`.
 
 **Linux x86_64:** há um port nativo com as três cenas e toda a documentação. Consulte [LINUX.md](Docs/LINUX.md) para executar, compilar e validar. Os pacotes ficam na [página de versões](https://github.com/MiguelSMaciel/Trajeto-Inclusivo/releases); o repositório contém os fontes, assets e documentação, sem os caches do Unity.
 

@@ -1,0 +1,7 @@
+{
+  "disableUnityAudio": true,
+  "masterVolume": 0,
+  "audioModuleInManifest": false,
+  "targetFrameRate": 60,
+  "vSyncCount": 0
+}
